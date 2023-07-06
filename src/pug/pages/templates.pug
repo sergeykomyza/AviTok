@@ -2,12 +2,116 @@
 html(lang="ru")
 	head
 		include ./../sections/_head.pug
-		title Site | Templates
+		title Avi-tok | Templates
 	body
 		include ./../sections/_header.pug
 		.templates
-			h1 Шаблоны
 
+			.container
+
+				br
+				br
+
+				h1 Действия
+
+				br
+
+				.select.select-empty
+					input.select__value(type="text" value="")
+					.select__header
+						svg.select__icon(width='14' height='9' viewbox='0 0 14 9' fill='none')
+							path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='white')
+						.select__current Показать еще
+					.select__body
+						each item in [1, 2, 3, 4, 5]
+							.select__item(data-value=item)= `${item}`
+
+				br
+
+				.select
+					input.select__value(type="text" value="")
+					.select__header
+						svg.select__icon(width='14' height='9' viewbox='0 0 14 9' fill='none')
+							path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='white')
+						.select__current Показать еще
+					.select__body
+						each item in [1, 2, 3, 4, 5]
+							.select__item(data-value=item)= `${item}`
+
+				hr(style="margin: 40px 0; border-bottom: 1px solid grey")
+				
+				h1 Таблицы
+
+				br
+
+				.table-action
+					
+					form.search(action="#")
+						button.search__button
+							svg.search__icon(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+								path(d='M14.2939 12.5786H13.3905L13.0703 12.2699C14.191 10.9663 14.8656 9.27387 14.8656 7.43282C14.8656 3.32762 11.538 0 7.43282 0C3.32762 0 0 3.32762 0 7.43282C0 11.538 3.32762 14.8656 7.43282 14.8656C9.27387 14.8656 10.9663 14.191 12.2699 13.0703L12.5786 13.3905V14.2939L18.2962 20L20 18.2962L14.2939 12.5786ZM7.43282 12.5786C4.58548 12.5786 2.28702 10.2802 2.28702 7.43282C2.28702 4.58548 4.58548 2.28702 7.43282 2.28702C10.2802 2.28702 12.5786 4.58548 12.5786 7.43282C12.5786 10.2802 10.2802 12.5786 7.43282 12.5786Z' fill='#C8C8C8')
+						input.search__input(type="text" placeholder="Поиск...")
+
+					button.table-filter
+						svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+							path(d='M0.265947 2.0125C2.80472 5.25 7.49265 11.25 7.49265 11.25V18.75C7.49265 19.4375 8.05822 20 8.74947 20H11.2631C11.9544 20 12.5199 19.4375 12.5199 18.75V11.25C12.5199 11.25 17.1953 5.25 19.7341 2.0125C20.375 1.1875 19.7843 0 18.7412 0H1.25883C0.215675 0 -0.37503 1.1875 0.265947 2.0125Z' fill='white')
+						span Фильтр поиска
+
+					button.table-adding 	
+						svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+							path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+						span Создать таблицу
+
+				.table-wrap
+					.table
+						-
+							const tableHead = [
+								{mod: 'name',     name: 'таблица'},
+								{mod: 'pay',      name: 'дата оплаты'},
+								{mod: 'comment',  name: 'примечание'},
+								{mod: 'quantity', name: 'кол-во объявлений'}
+							]
+						.table-head 
+							.table__col.table__col--num
+								.search-number
+									span.search-number__grid # 
+									output.search-number__item 0
+								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+							each item in tableHead
+								div(class=`table-head__col table__col table__col--${item.mod}`)
+									span.table-head__name= item.name
+									svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+										path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+						.table-body.table-empty 
+							.table-empty__text У вас нет таблиц, создайте новую!
+							button.table-empty__btn.animate-boxshadow
+								svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+									path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+								span Создать таблицу
+
+				.table-navigation 
+					
+					.select
+						input.select__value(type="text" value="")
+						.select__header
+							svg.select__icon(width='14' height='9' viewbox='0 0 14 9' fill='none')
+								path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='white')
+							.select__current Показать еще
+						.select__body
+							each item in [1, 2, 3, 4, 5]
+								.select__item(data-value=item)= `${item}`
+					
+					.table-selection c &nbsp; #[output.table-selection__period 1] &nbsp; по &nbsp; #[output.table-selection__period 10] &nbsp; строки 
+
+					.table-visible 
+						span.table-visible__text Выводить по
+						.table-visible__area 
+							output.table-visible__num 10
+
+				br
+				br
+				br
 			
 		include ./../sections/_footer.pug
 		

@@ -2,9 +2,39 @@
 	--red:   #FF4053; 
 	--green: #04E061; 
 	--blue:  #00AAFF;
-	--grey1: #00AAFF;
+	--hoverBlue: #0188CC;
+	--darkBlue: #004466;
+	--grey1: #7D7D7D ;
 	--grey2: #C8C8C8;  
+	--grey3: #888888;  
 } 
 
 // MIXINS
-	// @mixin NAMEMIXIN
+@mixin button($width, $height, $bg, $hoverBg){
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: $width;
+	height: $height;
+	padding-left: 20px;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 500;
+	color: #FFF;
+	border-radius: 10px; 
+	background: $bg;
+	transition: all .3s;
+	@media(max-width:992px){
+		width: 100%;
+	}
+	svg{
+		margin-right: 20px;
+	}
+	&:hover{
+		background: $hoverBg;
+	} 
+	&:active{
+		top: 1px;
+	}
+}

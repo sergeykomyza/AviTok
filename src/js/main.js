@@ -77,6 +77,41 @@ const sliders = () => {
 
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+function customSelect() {
+    document.querySelectorAll('.select').forEach(select => {
+        let selectHeader = select.querySelectorAll('.select__header'),
+            selectItem = select.querySelectorAll('.select__item'),
+            currentItem = select.querySelector('.select__current'),
+            selectInput = select.querySelector('.select__value');
+        selectHeader.forEach(item => {
+            item.addEventListener('click', selectToggle);
+        });
+        selectItem.forEach(item => {
+            item.addEventListener('click', selectChoose);
+        });
+        function selectToggle() {
+            this.parentElement.classList.toggle('is-active');
+        }
+        function selectChoose() {
+            let selectOption = this.innerText,
+                thisSelect = this.closest('.select');
+            currentItem.innerHTML = selectOption;
+            selectInput.value = selectOption;
+            selectItem.forEach(item => {
+                item.classList.remove('is-active')
+            });
+            this.classList.add('is-active')
+            thisSelect.classList.remove('is-active');
+        }
+        document.addEventListener('click', (e) => {
+            if (!select.contains(e.target)) {
+                select.classList.remove('is-active');
+            }
+        });
+    });
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
 const map = () => {
 
@@ -123,7 +158,8 @@ const map = () => {
 
 }
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+customSelect()
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* иногда карта не загружается таким образом (например в битриксе)

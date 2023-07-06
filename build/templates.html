@@ -8,12 +8,141 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <title>Site | Templates</title>
+    <title>Avi-tok | Templates</title>
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="container">
+        <div class="header__box"> <img class="logo" src="img/header-logo.svg" alt="logo"/></div>
+      </div>
+    </header>
     <div class="templates">
-      <h1>Шаблоны</h1>
+      <div class="container"><br/><br/>
+        <h1>Действия</h1><br/>
+        <div class="select select-empty">
+          <input class="select__value" type="text" value=""/>
+          <div class="select__header">
+            <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+              <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+            </svg>
+            <div class="select__current">Показать еще</div>
+          </div>
+          <div class="select__body">
+            <div class="select__item" data-value="1">1</div>
+            <div class="select__item" data-value="2">2</div>
+            <div class="select__item" data-value="3">3</div>
+            <div class="select__item" data-value="4">4</div>
+            <div class="select__item" data-value="5">5</div>
+          </div>
+        </div><br/>
+        <div class="select">
+          <input class="select__value" type="text" value=""/>
+          <div class="select__header">
+            <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+              <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+            </svg>
+            <div class="select__current">Показать еще</div>
+          </div>
+          <div class="select__body">
+            <div class="select__item" data-value="1">1</div>
+            <div class="select__item" data-value="2">2</div>
+            <div class="select__item" data-value="3">3</div>
+            <div class="select__item" data-value="4">4</div>
+            <div class="select__item" data-value="5">5</div>
+          </div>
+        </div>
+        <hr style="margin: 40px 0; border-bottom: 1px solid grey"/>
+        <h1>Таблицы</h1><br/>
+        <div class="table-action">
+          <form class="search" action="#">
+            <button class="search__button">
+              <svg class="search__icon" width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2939 12.5786H13.3905L13.0703 12.2699C14.191 10.9663 14.8656 9.27387 14.8656 7.43282C14.8656 3.32762 11.538 0 7.43282 0C3.32762 0 0 3.32762 0 7.43282C0 11.538 3.32762 14.8656 7.43282 14.8656C9.27387 14.8656 10.9663 14.191 12.2699 13.0703L12.5786 13.3905V14.2939L18.2962 20L20 18.2962L14.2939 12.5786ZM7.43282 12.5786C4.58548 12.5786 2.28702 10.2802 2.28702 7.43282C2.28702 4.58548 4.58548 2.28702 7.43282 2.28702C10.2802 2.28702 12.5786 4.58548 12.5786 7.43282C12.5786 10.2802 10.2802 12.5786 7.43282 12.5786Z" fill="#C8C8C8"></path>
+              </svg>
+            </button>
+            <input class="search__input" type="text" placeholder="Поиск..."/>
+          </form>
+          <button class="table-filter">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.265947 2.0125C2.80472 5.25 7.49265 11.25 7.49265 11.25V18.75C7.49265 19.4375 8.05822 20 8.74947 20H11.2631C11.9544 20 12.5199 19.4375 12.5199 18.75V11.25C12.5199 11.25 17.1953 5.25 19.7341 2.0125C20.375 1.1875 19.7843 0 18.7412 0H1.25883C0.215675 0 -0.37503 1.1875 0.265947 2.0125Z" fill="white"></path>
+            </svg><span>Фильтр поиска</span>
+          </button>
+          <button class="table-adding">	
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+            </svg><span>Создать таблицу</span>
+          </button>
+        </div>
+        <div class="table-wrap">
+          <div class="table">
+            <div class="table-head"> 
+              <div class="table__col table__col--num">
+                <div class="search-number"><span class="search-number__grid"># </span>
+                  <output class="search-number__item">0</output>
+                </div>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
+              <div class="table-head__col table__col table__col--name"><span class="table-head__name">таблица</span>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
+              <div class="table-head__col table__col table__col--pay"><span class="table-head__name">дата оплаты</span>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
+              <div class="table-head__col table__col table__col--comment"><span class="table-head__name">примечание</span>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
+              <div class="table-head__col table__col table__col--quantity"><span class="table-head__name">кол-во объявлений</span>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="table-body table-empty"> 
+              <div class="table-empty__text">У вас нет таблиц, создайте новую!</div>
+              <button class="table-empty__btn animate-boxshadow">
+                <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                </svg><span>Создать таблицу</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="table-navigation"> 
+          <div class="select">
+            <input class="select__value" type="text" value=""/>
+            <div class="select__header">
+              <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+                <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+              </svg>
+              <div class="select__current">Показать еще</div>
+            </div>
+            <div class="select__body">
+              <div class="select__item" data-value="1">1</div>
+              <div class="select__item" data-value="2">2</div>
+              <div class="select__item" data-value="3">3</div>
+              <div class="select__item" data-value="4">4</div>
+              <div class="select__item" data-value="5">5</div>
+            </div>
+          </div>
+          <div class="table-selection">c &nbsp; 
+            <output class="table-selection__period">1</output> &nbsp; по &nbsp; 
+            <output class="table-selection__period">10</output> &nbsp; строки 
+          </div>
+          <div class="table-visible"> <span class="table-visible__text">Выводить по</span>
+            <div class="table-visible__area"> 
+              <output class="table-visible__num">10</output>
+            </div>
+          </div>
+        </div><br/><br/><br/>
+      </div>
     </div>
     <footer class="footer"></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
