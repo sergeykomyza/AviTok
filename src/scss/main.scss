@@ -26,6 +26,7 @@
 *,
 p,
 h1,h2,h3,h4,h5,h6{
+
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -61,6 +62,7 @@ b{
 }
 button{ 
 	display: block;
+	font-family: 'Montserrat', sans-serif;
 	background: transparent;
 	border: none;
 	outline: none;
@@ -111,21 +113,7 @@ input, textarea{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ (нужны там где нет нужды в осмысленном класснейминге)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.animate-boxshadow{
-	animation: boxshadow 1s ease-in-out infinite;
-}
-
-@keyframes boxshadow {
-	0%{
-		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.50);
-	}
-	50%{
-		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.20);
-	}
-	100%{
-		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.50);
-	}
-}
+ 
 
 
 

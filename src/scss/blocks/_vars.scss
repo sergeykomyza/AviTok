@@ -1,5 +1,6 @@
 :root{
 	--red:   #FF4053; 
+	--hoverRed: #C7303F;
 	--green: #04E061; 
 	--blue:  #00AAFF;
 	--hoverBlue: #0188CC;
@@ -18,7 +19,7 @@
 	width: $width;
 	height: $height;
 	padding-left: 20px;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 26px;
 	font-weight: 500;
 	color: #FFF;

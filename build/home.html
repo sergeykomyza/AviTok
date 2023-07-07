@@ -8,12 +8,77 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <title>Site | Home</title>
+    <title>Avi-tok | Главная </title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <div class="header__box"> <img class="logo" src="img/header-logo.svg" alt="logo"/></div>
+        <nav class="header__box"><img class="logo" src="img/header-logo.svg" alt="logo"/>
+          <div class="desktop">
+            <div class="header__actions">
+              <div class="header-menu">
+                <ul class="header-menu__list">
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Автозагрузка</a></li>
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Аналитика</a></li>
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Генератор времени</a></li>
+                </ul>
+              </div><a class="header-finance" href="#"><span class="header-finance__text">Финансы</span>
+                <svg class="header-finance__icon" width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.9474 15V16C18.9474 17.1 18 18 16.8421 18H2.10526C0.936842 18 0 17.1 0 16V2C0 0.9 0.936842 0 2.10526 0H16.8421C18 0 18.9474 0.9 18.9474 2V3H9.47368C8.30526 3 7.36842 3.9 7.36842 5V13C7.36842 14.1 8.30526 15 9.47368 15H18.9474ZM9.47368 13H20V5H9.47368V13ZM13.6842 10.5C12.8105 10.5 12.1053 9.83 12.1053 9C12.1053 8.17 12.8105 7.5 13.6842 7.5C14.5579 7.5 15.2632 8.17 15.2632 9C15.2632 9.83 14.5579 10.5 13.6842 10.5Z" fill="black"></path>
+                </svg>
+                <output class="header-finance__sum">0.00</output></a>
+              <div class="header-lk">
+                <button class="header-lk__button js-lkMenuToggle"><span class="header-lk__text">Личный кабинет</span>
+                  <svg class="header-lk__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                    <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="black"></path>
+                  </svg>
+                </button>
+                <div class="header-lk__menu">
+                  <ul class="header-lk__list"> 
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-calendar.svg" alt=""/><span class="header-lk__linktext">Генератор времени</span></a></li>
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-settings.svg" alt=""/><span class="header-lk__linktext">Настройки</span></a></li>
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-logout.svg" alt=""/><span class="header-lk__linktext">Выйти</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile">
+            <button class="gamburger"><span></span><span></span><span></span>
+            </button>
+          </div>
+        </nav>
+        <div class="mobile">
+          <nav class="m-menu">
+            <div class="m-menu__inner">
+              <div class="header-menu">
+                <ul class="header-menu__list">
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Автозагрузка</a></li>
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Аналитика</a></li>
+                  <li class="header-menu__item"> <a class="header-menu__link" href="#">Генератор времени</a></li>
+                </ul>
+              </div>
+              <div class="header-lk">
+                <button class="header-lk__button js-lkMenuToggle"><span class="header-lk__text">Личный кабинет</span>
+                  <svg class="header-lk__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                    <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="black"></path>
+                  </svg>
+                </button>
+                <div class="header-lk__menu">
+                  <ul class="header-lk__list"> 
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-calendar.svg" alt=""/><span class="header-lk__linktext">Генератор времени</span></a></li>
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-settings.svg" alt=""/><span class="header-lk__linktext">Настройки</span></a></li>
+                    <li class="header-lk__item"> <a class="header-lk__link" href="#"> <img class="header-lk__img" src="img/icon-logout.svg" alt=""/><span class="header-lk__linktext">Выйти</span></a></li>
+                  </ul>
+                </div>
+              </div><a class="header-finance" href="#"><span class="header-finance__text">Финансы</span>
+                <svg class="header-finance__icon" width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.9474 15V16C18.9474 17.1 18 18 16.8421 18H2.10526C0.936842 18 0 17.1 0 16V2C0 0.9 0.936842 0 2.10526 0H16.8421C18 0 18.9474 0.9 18.9474 2V3H9.47368C8.30526 3 7.36842 3.9 7.36842 5V13C7.36842 14.1 8.30526 15 9.47368 15H18.9474ZM9.47368 13H20V5H9.47368V13ZM13.6842 10.5C12.8105 10.5 12.1053 9.83 12.1053 9C12.1053 8.17 12.8105 7.5 13.6842 7.5C14.5579 7.5 15.2632 8.17 15.2632 9C15.2632 9.83 14.5579 10.5 13.6842 10.5Z" fill="black"></path>
+                </svg>
+                <output class="header-finance__sum">0.00</output></a>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
     <footer class="footer"></footer>

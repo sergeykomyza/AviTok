@@ -1,6 +1,91 @@
 include ./../mixins/_mixin.pug
 
+//- header.header
+//- 	.container
+//- 		.header__box
+
+//- 			img.logo(src="img/header-logo.svg", alt="logo")
+			
+//- 			.desktop
+//- 				.header__actions
+//- 					a.header__enter(href="#") Войти
+//- 					a.header__registration(href="#") Регистрация
+			
+//- 			.mobile
+//- 				button.gamburger
+//- 					each span in [1, 2, 3]
+//- 						span
+//- 		.mobile
+//- 			.m-menu
+//- 				.m-menu__inner
+//- 					.header__actions
+//- 						a.header__enter(href="#") Войти
+//- 						a.header__registration(href="#") Регистрация 
+
+
 header.header
 	.container
-		.header__box 
+		nav.header__box
+
 			img.logo(src="img/header-logo.svg", alt="logo")
+			
+			.desktop
+				.header__actions
+					
+					.header-menu
+						ul.header-menu__list
+							each item in ['Автозагрузка', 'Аналитика', 'Генератор времени']
+								li.header-menu__item 
+									a.header-menu__link(href="#")= item  
+
+					a.header-finance(href="#")
+						span.header-finance__text Финансы
+						svg.header-finance__icon(width='20' height='18' viewbox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+							path(d='M18.9474 15V16C18.9474 17.1 18 18 16.8421 18H2.10526C0.936842 18 0 17.1 0 16V2C0 0.9 0.936842 0 2.10526 0H16.8421C18 0 18.9474 0.9 18.9474 2V3H9.47368C8.30526 3 7.36842 3.9 7.36842 5V13C7.36842 14.1 8.30526 15 9.47368 15H18.9474ZM9.47368 13H20V5H9.47368V13ZM13.6842 10.5C12.8105 10.5 12.1053 9.83 12.1053 9C12.1053 8.17 12.8105 7.5 13.6842 7.5C14.5579 7.5 15.2632 8.17 15.2632 9C15.2632 9.83 14.5579 10.5 13.6842 10.5Z' fill='black')
+						output.header-finance__sum 0.00
+
+					.header-lk
+						button.header-lk__button.js-lkMenuToggle
+							span.header-lk__text Личный кабинет
+							svg.header-lk__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+								path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='black')
+						.header-lk__menu
+							ul.header-lk__list 
+								each item in [{icon: 'icon-calendar.svg', link: 'Генератор времени'}, {icon: 'icon-settings.svg', link: 'Настройки'}, {icon: 'icon-logout.svg', link: 'Выйти'}]
+									li.header-lk__item 
+										a.header-lk__link(href="#") 
+											img.header-lk__img(src="img/" + item.icon, alt="")
+											span.header-lk__linktext= item.link
+			
+			.mobile
+				button.gamburger
+					each span in [1, 2, 3]
+						span
+		.mobile
+			nav.m-menu
+				.m-menu__inner
+					
+					.header-menu
+						ul.header-menu__list
+							each item in ['Автозагрузка', 'Аналитика', 'Генератор времени']
+								li.header-menu__item 
+									a.header-menu__link(href="#")= item 
+					
+					.header-lk
+						button.header-lk__button.js-lkMenuToggle
+							span.header-lk__text Личный кабинет
+							svg.header-lk__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+								path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='black')
+						.header-lk__menu
+							ul.header-lk__list 
+								each item in [{icon: 'icon-calendar.svg', link: 'Генератор времени'}, {icon: 'icon-settings.svg', link: 'Настройки'}, {icon: 'icon-logout.svg', link: 'Выйти'}]
+									li.header-lk__item 
+										a.header-lk__link(href="#") 
+											img.header-lk__img(src="img/" + item.icon, alt="")
+											span.header-lk__linktext= item.link
+					
+					a.header-finance(href="#")
+						span.header-finance__text Финансы
+						svg.header-finance__icon(width='20' height='18' viewbox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+							path(d='M18.9474 15V16C18.9474 17.1 18 18 16.8421 18H2.10526C0.936842 18 0 17.1 0 16V2C0 0.9 0.936842 0 2.10526 0H16.8421C18 0 18.9474 0.9 18.9474 2V3H9.47368C8.30526 3 7.36842 3.9 7.36842 5V13C7.36842 14.1 8.30526 15 9.47368 15H18.9474ZM9.47368 13H20V5H9.47368V13ZM13.6842 10.5C12.8105 10.5 12.1053 9.83 12.1053 9C12.1053 8.17 12.8105 7.5 13.6842 7.5C14.5579 7.5 15.2632 8.17 15.2632 9C15.2632 9.83 14.5579 10.5 13.6842 10.5Z' fill='black')
+						output.header-finance__sum 0.00
