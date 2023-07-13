@@ -90,6 +90,7 @@
 
 		&__menu{
 			position: absolute;
+			z-index: 1;
 			top: 68px;
 			right: 0;
 			display: none;
@@ -98,6 +99,7 @@
 			padding-left: 18px;
 			border: 1px solid var(--grey2);
 			border-radius: 10px;
+			background: #FFF;
 			&.is-open{
 				display: block;
 			}
@@ -266,10 +268,11 @@
 
 .m-menu{
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	top: 60px;
-	left: 15px;
-	right: 15px; 
+	left: 0;
+	width: 100%; 
+	padding: 0 15px;
 	background: #FFF;
 	overflow: hidden;
 	transition: all .3s;

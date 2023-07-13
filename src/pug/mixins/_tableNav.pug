@@ -1,0 +1,20 @@
+mixin tableNav(pos, num1, num2)
+	.table-navigation 		
+		div(class=`${pos === 'disabled' ? 'select select-empty' : 'select'}`)
+			input.select__value(type="text" value="")
+			.select__header
+				svg.select__icon(width='14' height='9' viewbox='0 0 14 9' fill='none')
+					path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='white')
+				.select__current Показать еще
+			.select__body
+				each item in [1, 2, 3, 4, 5]
+					.select__item(data-value=item)= `${item}`
+		
+		.table-selection c &nbsp; #[output.table-selection__period= num1] &nbsp; по &nbsp; #[output.table-selection__period= num2] &nbsp; строки 
+
+		.table-visible
+			.desktop
+				.table-visible__box 
+					span.table-visible__text Выводить по
+					.table-visible__area 
+						output.table-visible__num 10

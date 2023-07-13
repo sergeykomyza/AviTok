@@ -25,7 +25,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МАСКА ДЛЯ ИНПУТОВ (https://github.com/RobinHerbots/Inputmask)
 const inputMask = () => {
 	$(".js-maskPhone").inputmask({
-		mask: "+7 999 999 99 99",
+		mask: "+7 (999) 999 99-99",
 		clearIncomplete: true,
 	});
 	$(".email").inputmask({
@@ -149,6 +149,16 @@ const lkMenuToggle = () => {
 	})
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const topToTableHead = () => {
+	const btn = document.querySelector('.js-topToTableHead')
+	const table = document.querySelector('.table__scroll')
+	btn.addEventListener('click', function() {
+
+		table.scroll({top: 0, left: 0, behavior: 'smooth' });
+		
+	})
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
 const map = () => {
@@ -207,9 +217,11 @@ const map = () => {
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inputMask()
 customSelect()
 mMenu()
 lkMenuToggle()
+topToTableHead()
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* иногда карта не загружается таким образом (например в битриксе)

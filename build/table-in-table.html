@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <title>Avi-tok | Table </title>
+    <title>Avi-tok | Table in table </title>
   </head>
   <body>
     <header class="header">
@@ -100,6 +100,11 @@
                 </button>
           </div>
           <div class="table-action__box">
+            <button class="table-edit">
+              <svg class="table-edit__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#00AAFF"></path>
+              </svg><span class="table-edit__text">Редактировать таблицы</span>
+            </button>
             <button class="table-adding">
               <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
@@ -139,13 +144,72 @@
                 </svg>
               </div>
             </div>
-            <div class="table-body table-empty"> 
-              <div class="table-empty__text">У вас нет таблиц, создайте новую!</div>
-              <button class="table-empty__btn animate-boxshadow">
-                <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                </svg><span>Создать таблицу</span>
-              </button>
+            <div class="table-body"> 
+              <div class="position"> 
+                <div class="desktop">
+                  <div class="position__num table--num">1</div>
+                </div>
+                <div class="position-data table--name"> 
+                  <div class="position-data__title">
+                    <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Авто запчасти АвтоВАЗ </a>
+                  </div>
+                  <table class="position-data__table">
+                    <tr class="position-data__item"> 
+                      <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
+                      <td class="position-data__col position-data__col--flex position-data__col--mcolumn"><a class="position-data__val" href="#">Добавьте таблицу Google в настройках  </a>
+                        <button class="edit-btn edit-btn--add">
+                          <svg class="desktop" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                          </svg><span class="mobile">Добавить таблицу</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="position-data__item"> 
+                      <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
+                      <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
+                        <button class="edit-btn">
+                          <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                            <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="position-data__item">
+                      <td class="position-data__col"><b class="position-data__name">Нет данных:</b></td>
+                      <td class="position-data__col position-data__col--flex position-data__col--mcolumn"><span class="position-data__val">Яндекс токен, Avito client_id, Avito client_secret, Avito user_id, Avito user_id</span>
+                        <button class="edit-btn edit-btn--add"> 
+                          <svg class="desktop" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                          </svg><span class="mobile">Добавить таблицу</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="position-pay table--pay">
+                  <div class="mobile"> 
+                    <div class="position__mobiletitle">Дата оплаты</div>
+                  </div>
+                  <div class="position-pay__date">
+                    <div class="position-pay__status position-pay__status--red"></div>01 Мая 2023 г
+                  </div>
+                  <button class="position-pay__btn">Продлить</button>
+                </div>
+                <div class="position-comment table--comment">
+                  <div class="mobile"> 
+                    <div class="position__mobiletitle">Примечание</div>
+                  </div>
+                  <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
+                </div>
+                <div class="position-quantity table--quantity"> 
+                  <div class="mobile"> 
+                    <div class="position__mobiletitle">Кол-во объявлений:</div>
+                  </div>
+                  <div class="position-quantity__box">
+                    <output class="position-quantity__num">100</output>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -168,8 +232,8 @@
                   </div>
                 </div>
                 <div class="table-selection">c &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; строки 
+                  <output class="table-selection__period">1</output> &nbsp; по &nbsp; 
+                  <output class="table-selection__period">1</output> &nbsp; строки 
                 </div>
                 <div class="table-visible">
                   <div class="desktop">
@@ -181,12 +245,6 @@
                   </div>
                 </div>
               </div>
-        </div>
-        <div class="tooltip tooltip-register"> 
-          <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
-          </svg>
-          <p class="tooltip__text">На ваш E-mail было отправлено письмо для подтверждения регистрации. Если не получили письмо, проверьте спам. <a href="#">Отправить повторно</a> или <a href="#">Изменить почту.</a></p>
         </div>
       </div>
     </main>

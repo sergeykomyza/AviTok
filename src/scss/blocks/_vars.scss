@@ -2,12 +2,14 @@
 	--red:   #FF4053; 
 	--hoverRed: #C7303F;
 	--green: #04E061; 
+	--green2: #00BF51;
 	--blue:  #00AAFF;
 	--hoverBlue: #0188CC;
 	--darkBlue: #004466;
 	--grey1: #7D7D7D ;
 	--grey2: #C8C8C8;  
-	--grey3: #888888;  
+	--grey3: #888888; 
+	--orange: #FF9C00;
 } 
 
 // MIXINS
@@ -18,7 +20,8 @@
 	justify-content: flex-start;
 	width: $width;
 	height: $height;
-	padding-left: 20px;
+	padding-left: 18px;
+	padding-right: 18px;
 	font-size: 16px;
 	line-height: 26px;
 	font-weight: 500;
@@ -30,7 +33,9 @@
 		width: 100%;
 	}
 	svg{
-		margin-right: 20px;
+		&:nth-of-type(1){
+			margin-right: 20px;
+		}
 	}
 	&:hover{
 		background: $hoverBg;
