@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		include ./../sections/_head.pug
+		title Avi-tok | Analytics full
+	body
+
+		include ./../sections/_header.pug
+
+		main.main
+
+			.container
+
+				.table-action
+					.table-action__box
+						include ./../layouts/_tableSearch.pug
+						+tableFilterBtn('default', 'Фильтр поиска')
+					.table-action__box
+						include ./../layouts/_editTableBtn.pug
+						+addTable('Создать аналитику')
+
+				.table-wrap
+					.table
+						-
+							const tableHead = [
+								{mod: 'name',     name: 'таблица'},
+								{mod: 'comment',  name: 'примечание'},
+								{mod: 'quantity', name: 'кол-во объявлений'},
+								{mod: 'status',      name: 'статус'},
+							]
+						.table-head 
+							.table-head__col.table--num
+								.search-number
+									span.search-number__grid # 
+									output.search-number__item 5
+								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+							each item, i in tableHead
+								div(class=`table-head__col table--${item.mod}`)
+									span.table-head__name= item.name
+									if(i != 1)
+										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+						.table__scroll
+
+							.table-body
+
+								-
+									const positions = [
+										{name: 'Nokian tyres nordman sx3', catalog: 'Автозапчасти', marker: 'Набережные Челны', comm: 'Определить среднюю стоимость', num: '100'},
+										{name: 'Apple watch 6 44 mm',      catalog: 'Smart часы',   marker: 'Казань',           comm: 'Продающее описание',           num: '37'},
+										{name: 'Авто прицепы',             catalog: 'Прицепы',      marker: 'Ниж. Новгород',    comm: 'Поднять просмотры',            num: '100'},
+										{name: 'Apple watch 6 44 mm',      catalog: 'Smart часы',   marker: 'Казань',           comm: 'Продающее описание',           num: '80'},
+										{name: 'Apple watch 6 44 mm',      catalog: 'Smart часы',   marker: 'Казань',           comm: 'Продающее описание',           num: '80'},
+										{name: 'Apple watch 6 44 mm',      catalog: 'Smart часы',   marker: 'Казань',           comm: 'Продающее описание',           num: '80'}
+									]
+
+								each item, i in positions
+								
+									.position 
+										
+										.desktop
+											.position__num.table--num= `${i+1}`
+
+										.position-data.table--name 
+											.position-data__title
+												.position-data__titlelinks
+													.mobile
+														span.position__num= `${i+1}`
+													a.position-data__titlelink(href="#")= item.name 
+												span.position-data__divider /
+												a.position-data__titlelink(href="#")= item.catalog 
+											.position-data__marker 
+												.position-data__titlelinks
+													a.position-data__titlelink(href="#") 
+														svg(xmlns='http://www.w3.org/2000/svg' width='14' height='20' viewBox='0 0 14 20' fill='none')
+															path(d='M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z' fill='#004466')
+														span= item.marker
+											
+											table.position-data__table
+
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name URL страницы:
+													td.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee   
+												
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name Таблица:
+													td.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  
+														button.edit-btn
+															svg(width='17' height='20' viewBox='0 0 17 20' fill='none')
+																path(d='M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z' fill='#004466')
+											
+										.position-comment.table--comment
+											.mobile 
+												.position__mobiletitle Примечание
+											.position-comment__box 
+												p.position-comment__text= item.comm
+												button.position-comment__btn.position-comment__btn--edit
+													svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none')
+														path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#004466')
+
+										.position-quantity.table--quantity 
+											.mobile 
+												.position__mobiletitle Кол-во объявлений:
+											.position-quantity__box
+												output.position-quantity__num= item.num
+
+										.position-status.table--status
+											.position-status__wrap
+												div.position-status__inner
+													.mobile 
+														.position__mobiletitle Статус
+													if(i === 0)
+														.position-status__box
+															include ./../layouts/_ldsRing.pug
+															span.position-status__name В работе
+														button.position-status__btn Завершить
+													if(i === 1 || i === 3)
+														.position-status__box
+															a.position-status__download(href="#")
+																svg(width='16' height='20' viewBox='0 0 16 20' fill='none')
+																	path(d='M16 7.05882H11.4286V0H4.57143V7.05882H0L8 15.2941L16 7.05882ZM0 17.6471V20H16V17.6471H0Z' fill='#004466')
+																span Скачать файл
+													if(i === 2 )
+														.position-status__box
+															.position-status__indicator.position-status__indicator--red
+															span.position-status__name.position-status__name--red Ошибка
+													if(i === 4 )
+														.position-status__box
+															.position-status__indicator.position-status__indicator--green
+															span.position-status__name.position-status__name--green Успех
+													if(i === 5 )
+														.position-status__box
+															.position-status__indicator.position-status__indicator--orange
+															span.position-status__name.position-status__name--orange Внимание
+
+				+tableNav('', '1', '5')
+
+		include ./../sections/_footer.pug
+
+		include ./../sections/_scripts.pug

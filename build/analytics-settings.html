@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <title>Avi-tok | Auto upload full </title>
+    <title>Avi-tok | Analytics settings</title>
   </head>
   <body>
     <header class="header">
@@ -100,15 +100,15 @@
                 </button>
           </div>
           <div class="table-action__box">
-            <button class="table-edit">
-              <svg class="table-edit__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#00AAFF"></path>
-              </svg><span class="table-edit__text">Редактировать таблицы</span>
+            <button class="table-save">
+              <svg width="20" height="15" viewBox="0 0 20 15" fill="none">
+                <path d="M0 8L2 6L7 11L18 0L20 2L7 15L0 8Z" fill="white"></path>
+              </svg><span>Сохранить изменения</span>
             </button>
                 <button class="table-adding">
                   <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                  </svg><span>Создать таблицу</span>
+                  </svg><span>Создать аналитику</span>
                 </button>
           </div>
         </div>
@@ -123,15 +123,10 @@
             </div>
           </div>
           <div class="table">
-            <button class="table-up js-topToTableHead">
-              <svg width="14" height="9" viewbox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
-              </svg>
-            </button>
             <div class="table-head"> 
               <div class="table-head__col table--num">
                 <div class="search-number"><span class="search-number__grid"># </span>
-                  <output class="search-number__item">0</output>
+                  <output class="search-number__item">1</output>
                 </div>
                 <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
                   <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
@@ -142,36 +137,71 @@
                   <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
                 </svg>
               </div>
-              <div class="table-head__col table--pay"><span class="table-head__name">дата оплаты</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
               <div class="table-head__col table--comment"><span class="table-head__name">примечание</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
               </div>
               <div class="table-head__col table--quantity"><span class="table-head__name">кол-во объявлений</span>
                 <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
                   <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
                 </svg>
               </div>
+              <div class="table-head__col table--status"><span class="table-head__name">статус</span>
+                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                </svg>
+              </div>
             </div>
             <div class="table__scroll">
-              <div class="table-body"> 
-                <div class="position"> 
+              <div class="table-body">
+                <div class="position">
                   <div class="desktop">
                     <div class="position__num table--num">1</div>
                   </div>
-                  <div class="position-data table--name"> 
-                    <div class="position-data__title">
-                      <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Авто запчасти АвтоВАЗ</a>
+                  <div class="position-data table--name">
+                    <div class="edit-field">
+                      <div class="edit-field__pos">
+                        <div class="mobile">
+                          <div class="position__num">1</div>
+                        </div>
+                        <div class="edit-field__box">
+                          <input class="edit-field__input" type="text" value="Nokian tyres nord"/>
+                        </div>
+                        <div class="desktop">
+                          <button class="edit-btn edit-btn--complete">
+                            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0 8L2 6L7 11L18 0L20 2L7 15L0 8Z" fill="white"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="edit-field"> 
+                      <div class="edit-field__box">
+                        <input class="edit-field__input" type="text" value="Автозапчасти"/>
+                      </div>
+                      <div class="desktop">
+                        <button class="edit-btn edit-btn--record">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="edit-field"> 
+                      <div class="edit-field__box">
+                        <input class="edit-field__input" type="text" value="Набережные Челны"/>
+                      </div>
+                      <div class="desktop">
+                        <button class="edit-btn edit-btn--record">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <table class="position-data__table">
                       <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  </a>
+                        <td class="position-data__col"><b class="position-data__name">URL страницы:</b></td>
+                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
                           <button class="edit-btn">
                             <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
                               <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
@@ -180,8 +210,8 @@
                         </td>
                       </tr>
                       <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
+                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
+                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM </a>
                           <button class="edit-btn">
                             <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
                               <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
@@ -191,29 +221,13 @@
                       </tr>
                     </table>
                   </div>
-                  <div class="position-pay table--pay">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Дата оплаты</div>
-                    </div>
-                    <div class="position-pay__date">
-                      <div class="position-pay__status position-pay__status--red"></div><span>01 Мая 2023 г</span>
-                    </div>
-                    <button class="position-pay__btn">Продлить</button>
-                  </div>
                   <div class="position-comment table--comment">
                     <div class="mobile"> 
                       <div class="position__mobiletitle">Примечание</div>
                     </div>
-                    <div class="position-comment__box"> 
-                      <p class="position-comment__text">Не оплатили</p>
-                      <button class="position-comment__btn position-comment__btn--edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#004466"></path>
-                        </svg>
-                      </button>
-                    </div>
+                    <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
                   </div>
-                  <div class="position-quantity table--quantity"> 
+                  <div class="position-quantity table--quantity">
                     <div class="mobile"> 
                       <div class="position__mobiletitle">Кол-во объявлений:</div>
                     </div>
@@ -221,19 +235,78 @@
                       <output class="position-quantity__num">100</output>
                     </div>
                   </div>
+                  <div class="position-status table--status">
+                    <div class="position-status__wrap">
+                      <div class="position-status__inner">
+                        <div class="mobile"> 
+                          <div class="position__mobiletitle">Статус</div>
+                        </div>
+                        <div class="position-status__box">
+                          <svg class="spinner" viewBox="0 0 50 50">
+                            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                          </svg><span class="position-status__name">В работе</span>
+                        </div>
+                        <button class="position-status__btn">Завершить</button>
+                      </div>
+                      <button class="position__del">
+                        <svg height="1em" viewBox="0 0 448 512">
+                          <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" fill="#FFF"></path>
+                        </svg>
+                        <div class="mobile"> <span>Удалить таблицу</span></div>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div class="position"> 
+                <div class="position">
                   <div class="desktop">
                     <div class="position__num table--num">2</div>
                   </div>
-                  <div class="position-data table--name"> 
-                    <div class="position-data__title">
-                      <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Авто прицепы</a>
+                  <div class="position-data table--name">
+                    <div class="edit-field">
+                      <div class="edit-field__pos">
+                        <div class="mobile">
+                          <div class="position__num">2</div>
+                        </div>
+                        <div class="edit-field__box">
+                          <input class="edit-field__input" type="text" value="Apple watch 6 44 mm"/>
+                        </div>
+                        <div class="desktop">
+                          <button class="edit-btn edit-btn--record">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="edit-field"> 
+                      <div class="edit-field__box">
+                        <input class="edit-field__input" type="text" value="Smart часы"/>
+                      </div>
+                      <div class="desktop">
+                        <button class="edit-btn edit-btn--record">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="edit-field"> 
+                      <div class="edit-field__box">
+                        <input class="edit-field__input" type="text" value="Казань"/>
+                      </div>
+                      <div class="desktop">
+                        <button class="edit-btn edit-btn--record">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <table class="position-data__table">
                       <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  </a>
+                        <td class="position-data__col"><b class="position-data__name">URL страницы:</b></td>
+                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
                           <button class="edit-btn">
                             <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
                               <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
@@ -242,8 +315,8 @@
                         </td>
                       </tr>
                       <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
+                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
+                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM </a>
                           <button class="edit-btn">
                             <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
                               <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
@@ -253,220 +326,37 @@
                       </tr>
                     </table>
                   </div>
-                  <div class="position-pay table--pay">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Дата оплаты</div>
-                    </div>
-                    <div class="position-pay__date">
-                      <div class="position-pay__status position-pay__status--green"></div><span>02 Июня 2023 г</span>
-                    </div>
-                    <button class="position-pay__btn">Продлить</button>
-                  </div>
                   <div class="position-comment table--comment">
                     <div class="mobile"> 
                       <div class="position__mobiletitle">Примечание</div>
                     </div>
-                    <div class="position-comment__box"> 
-                      <p class="position-comment__text">Обновить цены</p>
-                      <button class="position-comment__btn position-comment__btn--edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#004466"></path>
-                        </svg>
-                      </button>
-                    </div>
+                    <textarea class="position-comment__textarea">Продающее описание</textarea>
                   </div>
-                  <div class="position-quantity table--quantity"> 
+                  <div class="position-quantity table--quantity">
                     <div class="mobile"> 
                       <div class="position__mobiletitle">Кол-во объявлений:</div>
                     </div>
                     <div class="position-quantity__box">
-                      <output class="position-quantity__num">250</output>
+                      <output class="position-quantity__num">37</output>
                     </div>
                   </div>
-                </div>
-                <div class="position"> 
-                  <div class="desktop">
-                    <div class="position__num table--num">3</div>
-                  </div>
-                  <div class="position-data table--name"> 
-                    <div class="position-data__title">
-                      <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Телефоны Iphone</a>
-                    </div>
-                    <table class="position-data__table">
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="position-pay table--pay">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Дата оплаты</div>
-                    </div>
-                    <div class="position-pay__date">
-                      <div class="position-pay__status position-pay__status--red"></div><span>02 Мая 2023 г</span>
-                    </div>
-                    <button class="position-pay__btn">Продлить</button>
-                  </div>
-                  <div class="position-comment table--comment">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Примечание</div>
-                    </div>
-                    <div class="position-comment__box"> 
-                      <p class="position-comment__text">Не оплатили / Изменить описание</p>
-                      <button class="position-comment__btn position-comment__btn--edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#004466"></path>
+                  <div class="position-status table--status">
+                    <div class="position-status__wrap">
+                      <div class="position-status__inner">
+                        <div class="mobile"> 
+                          <div class="position__mobiletitle">Статус</div>
+                        </div>
+                        <div class="position-status__box"><a class="position-status__download" href="#">
+                            <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+                              <path d="M16 7.05882H11.4286V0H4.57143V7.05882H0L8 15.2941L16 7.05882ZM0 17.6471V20H16V17.6471H0Z" fill="#004466"></path>
+                            </svg><span>Скачать файл</span></a></div>
+                      </div>
+                      <button class="position__del">
+                        <svg height="1em" viewBox="0 0 448 512">
+                          <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" fill="#FFF"></path>
                         </svg>
+                        <div class="mobile"> <span>Удалить таблицу</span></div>
                       </button>
-                    </div>
-                  </div>
-                  <div class="position-quantity table--quantity"> 
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Кол-во объявлений:</div>
-                    </div>
-                    <div class="position-quantity__box">
-                      <output class="position-quantity__num">30</output>
-                    </div>
-                  </div>
-                </div>
-                <div class="position"> 
-                  <div class="desktop">
-                    <div class="position__num table--num">4</div>
-                  </div>
-                  <div class="position-data table--name"> 
-                    <div class="position-data__title">
-                      <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Смарт часы</a>
-                    </div>
-                    <table class="position-data__table">
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="position-pay table--pay">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Дата оплаты</div>
-                    </div>
-                    <div class="position-pay__date">
-                      <div class="position-pay__status position-pay__status--orange"></div><span>04 Мая 2023 г</span>
-                    </div>
-                    <button class="position-pay__btn">Продлить</button>
-                  </div>
-                  <div class="position-comment table--comment">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Примечание</div>
-                    </div>
-                    <div class="position-comment__box"> 
-                      <p class="position-comment__text">Обновить описание</p>
-                      <button class="position-comment__btn position-comment__btn--edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#004466"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="position-quantity table--quantity"> 
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Кол-во объявлений:</div>
-                    </div>
-                    <div class="position-quantity__box">
-                      <output class="position-quantity__num">20</output>
-                    </div>
-                  </div>
-                </div>
-                <div class="position"> 
-                  <div class="desktop">
-                    <div class="position__num table--num">5</div>
-                  </div>
-                  <div class="position-data table--name"> 
-                    <div class="position-data__title">
-                      <div class="mobile"><span class="position__num">1</span></div><a class="position-data__titlelink" href="#">Столы</a>
-                    </div>
-                    <table class="position-data__table">
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">Таблица: </b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr class="position-data__item"> 
-                        <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                        <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
-                          <button class="edit-btn">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                            </svg>
-                          </button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="position-pay table--pay">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Дата оплаты</div>
-                    </div>
-                    <div class="position-pay__date">
-                      <div class="position-pay__status position-pay__status--green"></div><span>02 Июня 2023 г</span>
-                    </div>
-                    <button class="position-pay__btn">Продлить</button>
-                  </div>
-                  <div class="position-comment table--comment">
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Примечание</div>
-                    </div>
-                    <div class="position-comment__box"> 
-                      <p class="position-comment__text">Добавить даты выкладки</p>
-                      <button class="position-comment__btn position-comment__btn--edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#004466"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="position-quantity table--quantity"> 
-                    <div class="mobile"> 
-                      <div class="position__mobiletitle">Кол-во объявлений:</div>
-                    </div>
-                    <div class="position-quantity__box">
-                      <output class="position-quantity__num">60</output>
                     </div>
                   </div>
                 </div>
@@ -474,37 +364,39 @@
             </div>
           </div>
         </div>
-            <div class="table-navigation">		
-              <div class="select">
-                <input class="select__value" type="text" value=""/>
-                <div class="select__header">
-                  <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
-                    <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
-                  </svg>
-                  <div class="select__current">Показать еще</div>
+        <div class="desktop">
+              <div class="table-navigation">		
+                <div class="select select-empty">
+                  <input class="select__value" type="text" value=""/>
+                  <div class="select__header">
+                    <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+                      <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+                    </svg>
+                    <div class="select__current">Показать еще</div>
+                  </div>
+                  <div class="select__body">
+                    <div class="select__item" data-value="1">1</div>
+                    <div class="select__item" data-value="2">2</div>
+                    <div class="select__item" data-value="3">3</div>
+                    <div class="select__item" data-value="4">4</div>
+                    <div class="select__item" data-value="5">5</div>
+                  </div>
                 </div>
-                <div class="select__body">
-                  <div class="select__item" data-value="1">1</div>
-                  <div class="select__item" data-value="2">2</div>
-                  <div class="select__item" data-value="3">3</div>
-                  <div class="select__item" data-value="4">4</div>
-                  <div class="select__item" data-value="5">5</div>
+                <div class="table-selection">c &nbsp; 
+                  <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
+                  <output class="table-selection__period">0</output> &nbsp; строки 
                 </div>
-              </div>
-              <div class="table-selection">c &nbsp; 
-                <output class="table-selection__period">1</output> &nbsp; по &nbsp; 
-                <output class="table-selection__period">10</output> &nbsp; строки 
-              </div>
-              <div class="table-visible">
-                <div class="desktop">
-                  <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
-                    <div class="table-visible__area"> 
-                      <output class="table-visible__num">10</output>
+                <div class="table-visible">
+                  <div class="desktop">
+                    <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
+                      <div class="table-visible__area"> 
+                        <output class="table-visible__num">10</output>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+        </div>
       </div>
     </main>
     <footer class="footer">

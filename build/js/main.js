@@ -223,45 +223,4 @@ mMenu()
 lkMenuToggle()
 topToTableHead()
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* иногда карта не загружается таким образом (например в битриксе)
- тогда надо сделать обращение к ней как это указано в документации, через ymaps.ready - https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=techmapsmain
 
-ymaps.ready(init);
-
-function init(){
-
-    var myMap = new ymaps.Map("map", {
-        center: [56.745981, 37.179787],
-        zoom: 13,
-        controls: ['smallMapDefaultSet']
-    }, {
-        searchControlProvider: 'yandex#search'
-    });
-
-    myGeoObject = new ymaps.GeoObject({
-        geometry: {
-            type: "Point"
-        },
-    });
-    myMap.geoObjects
-        .add(myGeoObject)
-        .add(new ymaps.Placemark([56.745981, 37.179787], {
-            balloonContent: '<strong></strong>',
-            iconCaption: 'М.О., г. Королев, ул. Ленина 12'
-        }, {
-            preset: 'islands#blueCircleDotIconWithCaption',
-            iconCaptionMaxWidth: '200'
-        }));
-
-    myMap.setType('yandex#publicMap');
-    // отключаем масштабирование скроллом       
-    myMap.behaviors.disable('scrollZoom');
-    // на мобильных устройствах... (проверяем по userAgent браузера)
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        //... отключаем перетаскивание карты
-        myMap.behaviors.disable('drag');
-    }
-        
-}
-*/
