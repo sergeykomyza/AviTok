@@ -2,12 +2,92 @@
 html(lang="ru")
 	head
 		include ./../sections/_head.pug
-		title Site | Page 4
+		title Avi-tok | Генератор дат
 	body
 
 		include ./../sections/_header.pug
 
-		
+		main.main 
+
+			.container
+
+				h1.page-title Генератор дат
+
+				.date-generate 
+					
+					.date-generate__col
+						
+						.period
+							.period__item
+								span.date-generate__name Начало
+								include ./../layouts/_date.pug
+							span.period__divider —
+							.period__item
+								span.date-generate__name Конец
+								include ./../layouts/_date.pug
+
+						.weekday 
+							span.date-generate__name Дни недели
+							.datetime 
+								each item, i in [{day: 'Пн'}, {day: 'Вт', active: true}, {day: 'Ср'}, {day: 'Чт', active: true}, {day: 'Пт'}, {day: 'Сб'}, {day: 'Вс'}]
+									button(class=`${item.active == true ? 'datetime__item datetime__item--active' : 'datetime__item'}`)= item.day
+							.weekday__buttons 
+								button.weekday__allday Все дни
+								button.weekday__workday Будни
+
+						.times 
+							span.date-generate__name Время
+							-
+								dates = [
+									{list: [{time: '00'}, {time: '01', active: true}, {time: '02'}, {time: '03', active: true}, {time: '04'}, {time: '05', active: true}, {time: '06'}]},
+									{list: [{time: '07'}, {time: '08', active: true}, {time: '09', active: true}, {time: '10'}, {time: '11'}, {time: '12'}, {time: '13'}]},
+									{list: [{time: '14'}, {time: '15'}, {time: '16'}, {time: '17', active: true}, {time: '18', active: true}, {time: '19'}, {time: '20'}]},
+									{list: [{time: '21'}, {time: '22', active: true}, {time: '23'}]}
+								]
+							-
+								datesMobile = [
+									{list: [{time: '00'},               {time: '01', active: true}, {time: '02'},               {time: '03', active: true}]},
+									{list: [{time: '04'},               {time: '05', active: true}, {time: '06'},               {time: '07'}]},
+									{list: [{time: '08', active: true}, {time: '09', active: true}, {time: '10'},               {time: '11'}]},
+									{list: [{time: '12'},               {time: '13'},               {time: '14'},               {time: '15'}]},
+									{list: [{time: '16'},               {time: '17', active: true}, {time: '18', active: true}, {time: '19'}]},
+									{list: [{time: '20'},               {time: '21'},               {time: '22', active: true}, {time: '23'}]}
+								]
+							.desktop
+								.date-generate__datetimes
+									each item, i in dates 
+										.datetime 
+											each elem in item.list
+												button(class=`${elem.active == true ? 'datetime__item datetime__item--active' : 'datetime__item'}`)= elem.time
+									
+							.mobile
+								.date-generate__datetimes
+									each item, i in datesMobile 
+										.datetime 
+											each elem in item.list
+												button(class=`${elem.active == true ? 'datetime__item datetime__item--active' : 'datetime__item'}`)= elem.time
+									
+					.date-generate__col
+						
+						.advertising-quantity
+							span.date-generate__name Количество объявлений
+							.table-select
+								input.table-select__value(type="text" value="")
+								.table-select__header
+									.table-select__current Выберите таблицу
+									svg.table-select__icon(width='14' height='9' viewbox='0 0 14 9' fill='none')
+										path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='#C8C8C8')
+								.table-select__body
+									each item in [1, 2, 3, 4, 5, 6]
+										.table-select__item(data-value=item)= `${item}`
+
+						.advertising-quantity
+							span.date-generate__name Количество объявлений в день
+							input.advertising-quantity__input(type="text" val="10")
+							button.advertising-quantity__begin Сгенерировать даты начала
+							button.advertising-quantity__end Сгенерировать даты окончания
+
+					.date-generate__col
 
 		include ./../sections/_footer.pug
 

@@ -76,12 +76,12 @@ const sliders = () => {
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function customSelect() {
-	document.querySelectorAll(".select").forEach((select) => {
-		let selectHeader = select.querySelectorAll(".select__header"),
-			selectItem = select.querySelectorAll(".select__item"),
-			currentItem = select.querySelector(".select__current"),
-			selectInput = select.querySelector(".select__value");
+function customSelect(parent, header, item, current, value, activeClass) {
+	document.querySelectorAll(parent).forEach((select) => {
+		let selectHeader = select.querySelectorAll(header),
+			selectItem = select.querySelectorAll(item),
+			currentItem = select.querySelector(current),
+			selectInput = select.querySelector(value);
 		selectHeader.forEach((item) => {
 			item.addEventListener("click", selectToggle);
 		});
@@ -89,22 +89,22 @@ function customSelect() {
 			item.addEventListener("click", selectChoose);
 		});
 		function selectToggle() {
-			this.parentElement.classList.toggle("is-active");
+			this.parentElement.classList.toggle(activeClass);
 		}
 		function selectChoose() {
 			let selectOption = this.innerText,
-				thisSelect = this.closest(".select");
+				thisSelect = this.closest(parent);
 			currentItem.innerHTML = selectOption;
 			selectInput.value = selectOption;
 			selectItem.forEach((item) => {
-				item.classList.remove("is-active");
+				item.classList.remove(activeClass);
 			});
-			this.classList.add("is-active");
-			thisSelect.classList.remove("is-active");
+			this.classList.add(activeClass);
+			thisSelect.classList.remove(activeClass);
 		}
 		document.addEventListener("click", (e) => {
 			if (!select.contains(e.target)) {
-				select.classList.remove("is-active");
+				select.classList.remove(activeClass);
 			}
 		});
 	});
@@ -158,6 +158,29 @@ const topToTableHead = () => {
 		table.scroll({top: 0, left: 0, behavior: 'smooth' });
 		
 	})
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const dataPicker = () => {
+	$.datepicker.regional['ru'] = {
+		closeText: 'Закрыть',
+		prevText: 'Предыдущий',
+		nextText: 'Следующий',
+		currentText: 'Сегодня',
+		monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+		monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+		dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+		dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+		dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+		weekHeader: 'Не',
+		dateFormat: 'dd.mm.yy',
+		firstDay: 1,
+		isRTL: false,
+		showMonthAfterYear: false,
+		yearSuffix: ''
+	};
+	$.datepicker.setDefaults($.datepicker.regional['ru']);
+	$(".js-dataPicker").datepicker();
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
@@ -218,9 +241,13 @@ const map = () => {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 inputMask()
-customSelect()
+customSelect('.select', '.select__header', '.select__item', '.select__current', '.select__value', 'is-active')
+customSelect('.table-select', '.table-select__header', '.table-select__item', '.table-select__current', '.table-select__value', 'is-active')
 mMenu()
 lkMenuToggle()
-topToTableHead()
+if(document.querySelector('.table')){
+	topToTableHead()
+}
+dataPicker()
 
 

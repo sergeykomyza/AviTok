@@ -53,10 +53,16 @@ html(lang="ru")
 
 
 				
-				
+				br
+
+				.datetime 
+					each item, i in [{day: 'Пн'}, {day: 'Вт', active: true}, {day: 'Ср'}, {day: 'Чт', active: true}, {day: 'Пт'}, {day: 'Сб'}, {day: 'Вс'}]
+						a(href="#" class=`${item.active == true ? 'datetime__item datetime__item--active' : 'datetime__item'}`)= item.day
 
 
+				br
 
+				include ./../layouts/_date.pug
 
 		include ./../sections/_footer.pug
 		
