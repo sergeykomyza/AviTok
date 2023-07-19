@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		include ./../sections/_head.pug
+		title Avi-tok | Финансы
+	body
+
+		include ./../sections/_header.pug
+
+		main.main 
+
+			.container
+
+				h1.page-title Финансы
+
+				.finance 
+
+					-
+						const finance = [
+							{className: 'balance', name: 'Баланс',          val: '0.00', btn: 'Пополнить'},
+							{className: 'income',  name: 'Заработано',      val: '0.00', btn: 'Пригласить'},
+							{className: 'status',  name: 'Статус партнера', val: '0%',   btn: 'Условия'}
+						]
+
+					each item, i in finance
+						div(class=`finance__item finance__item--${item.className}`) 
+							.finance__name= item.name 
+							output.finance__val= item.val 
+							.finance__actions
+								if(i === 0)
+									button.finance__action= item.btn
+									button.finance__price Цены
+									.switch
+										input.switch__input(type="checkbox")
+										span.switch__text Автоплатеж
+								else 
+									button.finance__action= item.btn
+
+
+
+		include ./../sections/_footer.pug
+
+		include ./../sections/_scripts.pug 

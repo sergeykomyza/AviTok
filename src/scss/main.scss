@@ -63,7 +63,7 @@ a {
 	}
 }
 b {
-	font-weight: 700;
+	font-weight: 600;
 }
 button {
 	display: block;
@@ -112,17 +112,17 @@ textarea {
 	margin: 0 auto;
 }
 
-.main{
+.main {
 	position: relative;
 	flex: 1;
 	padding-top: 40px;
 	padding-bottom: 140px;
-	@media(max-width: 992px){
+	@media (max-width: 992px) {
 		padding-bottom: 40px;
 	}
 }
 
-*{
+* {
 	::-webkit-scrollbar {
 		width: 6px; /* ширина всей полосы прокрутки */
 	}
@@ -133,15 +133,22 @@ textarea {
 	::-webkit-scrollbar-thumb {
 		background-color: var(--grey1); /* цвет бегунка */
 		border-radius: 20px; /* округлось бегунка */
-		border: 3px solid transparent ;
+		border: 3px solid transparent;
 	}
-
 }
 
+.content{
+	font-size: 18px;
+	a{
+		font-weight: 600;
+		color: var(--blue);
+		text-decoration: underline;
+	}
 
-
-  
-
+	@media(max-width: 992px){
+		font-size: 16px;
+	}
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	//END ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА 
@@ -184,47 +191,66 @@ textarea {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ГЕНЕРАТОР ДАТ
-.date-generate{
-	display: grid;
-	grid-template-columns: 1.36fr 0.7645fr 1fr;
+.date-generate {
+	display: flex;
+	flex-wrap: wrap;
 	gap: 30px;
 	margin-top: 40px;
 
-	@media(max-width: 992px){
+	@media (max-width: 992px) {
 		grid-template-columns: 1fr;
 	}
 
-	&__datetimes{
+	&__col {
+		&--periods {
+			flex-shrink: 0;
+			max-width: 595px;
+			width: 100%;
+		}
+		&--advertising {
+			flex-shrink: 0;
+			max-width: 345px;
+			width: 100%;
+		}
+		&--publications {
+			max-width: 470px;
+			width: 100%;
+			@media (max-width: 992px) {
+			}
+		}
+	}
+
+	&__datetimes {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		@media(max-width: 992px){
+		@media (max-width: 992px) {
 			align-items: initial;
 		}
 	}
 
-	&__name{
+	&__name {
 		display: block;
 		margin-bottom: 20px;
 		font-weight: 600;
-		@media(max-width: 992px){
+		@media (max-width: 992px) {
 			margin-bottom: 10px;
 		}
 	}
 }
 
-.datetime{
+.datetime {
 	display: flex;
 	height: 40px;
 	border: 1px solid var(--blue);
 	border-radius: 10px;
 	overflow: hidden;
 
-	&:not(:nth-of-type(1)){
+	&:not(:nth-of-type(1)) {
 		margin-top: 10px;
 	}
 
-	&__item{
+	&__item {
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -233,11 +259,11 @@ textarea {
 		width: 85px;
 		font-weight: 700;
 		color: var(--blue);
-		@media(max-width: 992px){
+		@media (max-width: 992px) {
 			width: auto;
 		}
-		&:not(:last-child):after{
-			content: '';
+		&:not(:last-child):after {
+			content: "";
 			position: absolute;
 			top: 4px;
 			bottom: 4px;
@@ -245,17 +271,17 @@ textarea {
 			width: 1px;
 			background: var(--blue);
 		}
-		&--active{
-			color: #FFF;
+		&--active {
+			color: #fff;
 			background: var(--blue);
-			&:after{
+			&:after {
 				display: none;
 			}
 		}
 	}
 }
 
-.date{
+.date {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -263,14 +289,14 @@ textarea {
 	border: 1px solid var(--blue);
 	border-radius: 10px;
 	overflow: hidden;
-	
-	&__icon{
+
+	&__icon {
 		position: absolute;
 		left: 20px;
 		pointer-events: none;
 	}
 
-	&__input{
+	&__input {
 		width: 100%;
 		height: 100%;
 		padding-left: 60px;
@@ -282,44 +308,44 @@ textarea {
 	}
 }
 
-.period{
+.period {
 	display: flex;
 	align-items: flex-end;
 
-	@media(max-width: 992px){
+	@media (max-width: 992px) {
 		flex-direction: column;
 		align-items: initial;
 		gap: 20px;
 	}
 
-	&__item{
+	&__item {
 		width: 100%;
 	}
-	
-	&__divider{
+
+	&__divider {
 		display: block;
 		margin: 0 20px 12px;
-		@media(max-width: 992px){
+		@media (max-width: 992px) {
 			display: none;
 		}
 	}
 }
 
-.weekday{
+.weekday {
 	margin-top: 40px;
-	&__buttons{
+	&__buttons {
 		display: flex;
 		gap: 30px;
 		margin-top: 20px;
-		@media(max-width: 992px){
+		@media (max-width: 992px) {
 			flex-direction: column;
 		}
 	}
-	&__allday{
+	&__allday {
 		@include button(100%, 40px, var(--blue), var(--hoverBlue));
 		justify-content: center;
 	}
-	&__workday{
+	&__workday {
 		@include button(100%, 40px, transparent, #ceefff);
 		border: 1px solid var(--blue);
 		justify-content: center;
@@ -330,19 +356,20 @@ textarea {
 	}
 }
 
-.times{
+.times {
 	margin-top: 20px;
 }
 
-.ui-datepicker th{
+.ui-datepicker th {
 	font-weight: 400;
 	color: #999;
 }
-.ui-datepicker td{
+.ui-datepicker td {
 	width: 26px;
 	height: 26px;
 }
-.ui-state-default, .ui-widget-content .ui-state-default{
+.ui-state-default,
+.ui-widget-content .ui-state-default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -351,13 +378,14 @@ textarea {
 	background: none;
 	border: none;
 }
-.ui-state-active, .ui-widget-content .ui-state-active{
+.ui-state-active,
+.ui-widget-content .ui-state-active {
 	background: var(--blue);
 	border-radius: 5px;
 	border: none;
-	color: #FFF;
+	color: #fff;
 }
-.ui-widget-header{
+.ui-widget-header {
 	border: none;
 	background: transparent;
 }
@@ -423,11 +451,11 @@ textarea {
 		padding: 6px 20px;
 		cursor: pointer;
 		&:hover {
-			color: #FFF;
+			color: #fff;
 			background: var(--grey2);
 		}
 		&.is-active {
-			color: #FFF;
+			color: #fff;
 			background: var(--grey2);
 		}
 	}
@@ -442,12 +470,12 @@ textarea {
 	}
 }
 
-.advertising-quantity{
-	&:not(:nth-of-type(1)){
+.advertising-quantity {
+	&:not(:nth-of-type(1)) {
 		margin-top: 40px;
 	}
 
-	&__input{
+	&__input {
 		width: 100%;
 		height: 40px;
 		padding: 0 20px;
@@ -459,15 +487,264 @@ textarea {
 		background: transparent;
 	}
 
-	&__begin{
+	&__begin {
 		@extend .weekday__allday;
 		margin-top: 20px;
 	}
 
-	&__end{
+	&__end {
 		@extend .weekday__workday;
 		margin-top: 20px;
+		@media (max-width: 992px) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
 	}
 }
 
+.dates {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 30px;
 
+	&__item {
+		flex: 1;
+	}
+
+	&__list {
+		min-height: 370px;
+		padding: 20px;
+		border-radius: 10px;
+		border: 1px solid var(--grey2);
+	}
+
+	&__row {
+		&:not(:nth-of-type(1)) {
+			margin-top: 5px;
+		}
+		span {
+			font-weight: 500;
+		}
+	}
+
+	&__copy {
+		margin-top: 20px;
+		&--begin {
+			@extend .weekday__allday;
+		}
+		&--end {
+			@extend .weekday__workday;
+		}
+	}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ЛИЧНЫЕ ДАННЫЕ
+.settings {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 40px;
+	margin-top: 40px;
+
+	@media (max-width: 992px) {
+		align-items: initial;
+		flex-direction: column;
+	}
+
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 595px;
+		width: 100%;
+	}
+
+	&__field {
+		&.error .settings__unverified {
+			display: flex;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__unverified {
+		display: none;
+		align-items: center;
+		margin-top: 10px;
+		font-weight: 600;
+		color: var(--red);
+		text-decoration: underline;
+		svg {
+			margin-right: 10px;
+		}
+	}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ФИНАНСЫ
+.finance {
+	display: flex;
+	gap: 30px;
+	margin-top: 40px;
+
+	@media(max-width: 992px){
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__item {
+		position: relative;
+		padding: 20px;
+		border: 1px solid var(--grey2);
+		border-radius: 20px;
+		&--balance {
+			max-width: 595px;
+			width: 100%;
+		}
+		&--income {
+			max-width: 470px;
+			width: 100%;
+		}
+		&--status {
+			max-width: 345px;
+			width: 100%;
+		}
+	}
+
+	&__name {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	&__val {
+		display: block;
+		margin-top: 10px;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin-top: 20px;
+	}
+
+	&__action {
+		@include button(auto, 40px, var(--blue), var(--hoverBlue));
+		justify-content: center;
+	}
+
+	&__price {
+		@include button(auto, 40px, transparent, #ceefff);
+		border: 1px solid var(--blue);
+		justify-content: center;
+		color: var(--blue);
+		&__text {
+			color: var(--blue);
+		}
+	}
+}
+
+.switch {
+	display: flex;
+	align-items: center;
+
+	@media(max-width: 992px){
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	&__text{
+		font-weight: 500;
+		color: rgba(0, 68, 102, 0.20);
+	}
+
+	&__input {
+		position: relative;
+		flex-shrink: 0;
+		width: 40px;
+		height: 20px;
+		margin-right: 10px;
+		appearance: none;
+		border-radius: 100px;
+		background: rgba(0, 68, 102, 0.20); 
+		cursor: pointer;
+		
+		&:after {
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			width: 16px;
+			height: 16px;
+			background-color: #FFF;
+			border-radius: 50%;
+			transition: all 100ms ease-out;
+		}
+		
+		&:checked {
+			background: var(--darkBlue);
+			&:after {
+				background-color: #FFF;
+				left: 22px;
+			}
+			& + .switch__text{
+				color: var(--darkBlue);
+			}
+		}
+	}
+
+	
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ТАРИФЫ (PRICES)
+.tarifs{
+	&__box{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+		gap: 30px;
+		margin-top: 40px;
+		@media(max-width: 992px){
+			gap: 20px;
+		}
+	}
+
+	&__content{
+		max-width: 790px;
+		width: 100%;
+		margin: 40px auto 0;
+	}
+}
+
+.tarif{
+	position: relative;
+	padding: 20px;
+	border: 1px solid var(--grey2);
+	border-radius: 20px;
+	&__title{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__name{
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--blue);
+		text-transform: uppercase;
+	}
+	&__price{
+		font-size: 18px;
+		font-weight: 600;
+	}
+	&__val{
+		margin-top: 10px;
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--grey1);
+	}
+}

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <title>Avi-tok | Личные данные</title>
+    <title>Avi-tok | Тарифы автозагрузки</title>
   </head>
   <body>
     <header class="header">
@@ -84,102 +84,38 @@
     </header>
     <main class="main"> 
       <div class="container">
-        <h1 class="page-title">Личные данные</h1>
-        <div class="settings">
-          <div class="settings__fields">
-            <div class="settings__field">
-              <div class="settings__title">Имя</div>
-              <div class="edit-field">
-                <div class="edit-field__box">
-                  <input class="edit-field__input" type="text" value="Айзат"/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--record">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="settings__unverified">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#FF4053"></path>
-                </svg><span>Не верифицирован</span>
-              </div>
+        <h1 class="page-title">Тарифы автозагрузки</h1>
+        <div class="tarifs">
+          <div class="tarifs__box"> 
+            <div class="tarif">
+              <div class="tarif__title"> <span class="tarif__name">lite</span><span class="tarif__price">= 1 600 руб</span></div>
+              <div class="tarif__val">до 500 объявлений</div>
             </div>
-            <div class="settings__field">
-              <div class="settings__title">Номер телефона</div>
-              <div class="edit-field">
-                <div class="edit-field__box">
-                  <input class="edit-field__input js-maskPhone" type="text" value="+7 (000) 000 00-00"/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--record">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="settings__unverified">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#FF4053"></path>
-                </svg><span>Не верифицирован</span>
-              </div>
+            <div class="tarif">
+              <div class="tarif__title"> <span class="tarif__name">medium</span><span class="tarif__price">= 2 300 руб</span></div>
+              <div class="tarif__val">до 5 000 объявлений</div>
             </div>
-            <div class="settings__field error">
-              <div class="settings__title">Email </div>
-              <div class="edit-field">
-                <div class="edit-field__box">
-                  <input class="edit-field__input" type="text" value="Aizat.saff@mail.ru"/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--record">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="settings__unverified">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#FF4053"></path>
-                </svg><span>Не верифицирован</span>
-              </div>
-            </div>
-            <div class="settings__field">
-              <div class="settings__title">Пароль</div>
-              <div class="edit-field">
-                <div class="edit-field__box">
-                  <input class="edit-field__input" type="password" value="sdfgsdfgsdfgsdfgsdgsdfg"/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--record">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="settings__unverified">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#FF4053"></path>
-                </svg><span>Не верифицирован</span>
-              </div>
-            </div>
-            <div class="mobile">
-              <button class="table-edit">
-                <svg class="table-edit__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#00AAFF"></path>
-                </svg><span class="table-edit__text">Редактировать профиль</span>
-              </button>
+            <div class="tarif">
+              <div class="tarif__title"> <span class="tarif__name">pro</span><span class="tarif__price">= 3 000 руб</span></div>
+              <div class="tarif__val">до 50 000 объявлений</div>
             </div>
           </div>
-          <div class="tooltip tooltip-settings">
-            <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
-            </svg>
-            <p class="tooltip__text">На ваш E-mail было отправлено письмо для подтверждения регистрации. Если не получили письмо, проверьте спам. <a href="#">Отправить повторно</a> или <a href="#">Изменить почту.</a></p>
+          <div class="tarifs__content content">
+            <div class="tooltip">
+              <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
+              </svg>
+              <p class="tooltip__text">ВАЖНО: при покупке любого тарифа (допустим, Medium до 5.000 объявлений) Вы получаете таблицу с объемом до 5.000 объявлений и для Авито. Везде можно разместить до 5.000</p>
+            </div><br/><br/><b>За количество таблиц предусмотрена скидка в виде кэшбека до 30%</b><br/><br/>
+            <p>От 6 таблиц - 5% кэшбек</p>
+            <p>От 10 таблиц - 10% кэшбек</p>
+            <p>От 20 таблиц - 20% кэшбек</p>
+            <p>От 30 таблиц - 30% кэшбек</p><br/><br/>
+            <p>Тариф действует 30 дней с момента оплаты.</p><br/><br/>
+            <p>Если вы купите тариф Lite, а позже решили увеличить количество объявлений, до Medium, то можно доплатить разницу: 2300 - 1600 = 700 рублей и увеличить лимит.</p><br/><br/>
+            <p>Также, каждый активный реферал при расчете кэшбека, будет учитываться как активная таблица 			</p><br/><br/>
+            <p>Допустим, у вас 5 таблиц и 5 активных пользователей Вы пригласили. Итог - кэшбек 10%</p><br/><br/>
+            <p>Обязательно рекомендуйте нас, выдавая свою реферальную ссылку. Также мы начисляем бонус за траты приглашенных вами пользователей. Подробно в разделе <a href="#">Партнерская программа.</a></p>
           </div>
         </div>
       </div>

@@ -1,1 +1,61 @@
- 
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		include ./../sections/_head.pug
+		title Avi-tok | Личные данные
+	body
+
+		include ./../sections/_header.pug
+
+		main.main 
+
+			.container
+
+				h1.page-title Личные данные
+
+				.settings
+
+					.settings__fields
+
+						-
+							const fields = [
+								{name: 'Имя',            val: 'Айзат'},
+								{name: 'Номер телефона', val: '+7 (000) 000 00-00'},
+								{name: 'Email ',         val: 'Aizat.saff@mail.ru'},
+								{name: 'Пароль',         val: 'sdfgsdfgsdfgsdfgsdgsdfg'}
+							] 
+
+						each item, i in fields
+							div(class=`${i === 2 ? 'settings__field error' : 'settings__field'}`)
+								.settings__title= item.name
+								.edit-field
+									.edit-field__box
+										if(item.name === 'Номер телефона')
+											input.edit-field__input.js-maskPhone(type="text" value=`${item.val}`)
+										else if(item.name == 'Пароль') 
+											input.edit-field__input(type="password" value=`${item.val}`)
+										else 
+											input.edit-field__input(type="text" value=`${item.val}`)
+									.desktop
+										button.edit-btn.edit-btn--record
+											svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+												path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+								.settings__unverified
+									svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+										path(d='M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z' fill='#FF4053')
+									span Не верифицирован
+
+						.mobile
+							button.table-edit
+								svg.table-edit__icon(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+									path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#00AAFF')
+								span.table-edit__text Редактировать профиль
+
+					.tooltip.tooltip-settings
+						svg.tooltip__icon(width='20' height='20' viewBox='0 0 20 20' fill='none')
+							path(d='M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z' fill='#00AAFF')
+						p.tooltip__text На ваш E-mail было отправлено письмо для подтверждения регистрации. Если не получили письмо, проверьте спам. #[a(href="#") Отправить повторно] или #[a(href="#") Изменить почту.]
+
+		include ./../sections/_footer.pug
+
+		include ./../sections/_scripts.pug 
