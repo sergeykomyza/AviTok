@@ -157,7 +157,24 @@ textarea {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ (нужны там где нет нужды в осмысленном класснейминге)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.animate-boxshadow{
+	animation: boxshadow 1s ease-in-out infinite;
+	@media(max-width: 992px){
+		animation: none;
+	}
+}
 
+@keyframes boxshadow {
+	0%{
+		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.50);
+	}
+	50%{
+		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.20);
+	}
+	100%{
+		box-shadow: 0px 0px 60px 0px rgba(0, 170, 255, 0.50);
+	}
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	//END	ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -195,7 +212,6 @@ textarea {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
-	margin-top: 40px;
 
 	@media (max-width: 992px) {
 		grid-template-columns: 1fr;
@@ -522,9 +538,10 @@ textarea {
 		&:not(:nth-of-type(1)) {
 			margin-top: 5px;
 		}
-		span {
-			font-weight: 500;
-		}
+	}
+	
+	&__val{
+		font-weight: 500;
 	}
 
 	&__copy {
@@ -544,7 +561,6 @@ textarea {
 	justify-content: space-between;
 	align-items: flex-end;
 	gap: 40px;
-	margin-top: 40px;
 
 	@media (max-width: 992px) {
 		align-items: initial;
@@ -588,7 +604,6 @@ textarea {
 .finance {
 	display: flex;
 	gap: 30px;
-	margin-top: 40px;
 
 	@media(max-width: 992px){
 		flex-direction: column;
@@ -708,7 +723,6 @@ textarea {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 		gap: 30px;
-		margin-top: 40px;
 		@media(max-width: 992px){
 			gap: 20px;
 		}
@@ -748,3 +762,5 @@ textarea {
 		color: var(--grey1);
 	}
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REFERAL

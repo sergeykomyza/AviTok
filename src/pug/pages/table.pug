@@ -39,13 +39,14 @@ html(lang="ru")
 									span.table-head__name= item.name
 									svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
 										path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						
+
 						.table-body.table-empty 
 							.table-empty__text У вас нет таблиц, создайте новую!
-							button.table-empty__btn.animate-boxshadow
-								svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
-									path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
-								span Создать таблицу
+							.desktop
+								button.table-empty__btn.animate-boxshadow
+									svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+										path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+									span Создать таблицу
 
 				.desktop
 					+tableNav('disabled', '0', '0')
