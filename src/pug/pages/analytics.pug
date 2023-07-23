@@ -11,46 +11,50 @@ html(lang="ru")
 
 			.container
 
-				.table-action
-					.table-action__box
-						include ./../layouts/_tableSearch.pug
-						+tableFilterBtn('default', 'Фильтр поиска')
-					.table-action__box
-						+addTable('Создать аналитику')
+				.table-box
 
-				.table-wrap
-					.table
-						-
-							const tableHead = [
-								{mod: 'name',     name: 'таблица'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'quantity', name: 'кол-во объявлений'},
-								{mod: 'status',      name: 'статус'},
-							]
-						.table-head 
-							.table-head__col.table--num
-								.search-number
-									span.search-number__grid # 
-									output.search-number__item 0
-								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-							each item, i in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									if(i != 1)
+					.table-box__item
+
+						.table-action
+							.table-action__box
+								include ./../layouts/_tableSearch.pug
+								+tableFilterBtn('default', 'Фильтр поиска')
+							.table-action__box
+								+addTable('Создать аналитику')
+
+						.table-wrap
+							.table
+								-
+									const tableHead = [
+										{mod: 'name',     name: 'таблица'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'quantity', name: 'кол-во объявлений'},
+										{mod: 'status',      name: 'статус'},
+									]
+								.table-head 
+									.table-head__col.table--num
+										.search-number
+											span.search-number__grid # 
+											output.search-number__item 0
 										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
 											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						
-						.table-body.table-empty 
-							.table-empty__text У вас нет таблиц c аналитикой, создайте новую!
-							.desktop
-								button.table-empty__btn.animate-boxshadow
-									svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
-										path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
-									span Создать аналитику
+									each item, i in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											if(i != 1)
+												svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+													path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+								
+								.table-body.table-empty 
+									.table-empty__text У вас нет таблиц c аналитикой, создайте новую!
+									.desktop
+										button.table-empty__btn.animate-boxshadow
+											svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+												path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+											span Создать аналитику
 
-				.desktop
-					+tableNav('disabled', '0', '0')
+						.desktop
+							+tableNav('disabled', '0', '0')
 
 		include ./../sections/_footer.pug
 

@@ -11,193 +11,197 @@ html(lang="ru")
 
 			.container
 
-				.table-action
-					.table-action__box
-						include ./../layouts/_tableSearch.pug
-						+tableFilterBtn('default', 'Фильтр поиска')
-					.table-action__box
-						include ./../layouts/_saveTableBtn.pug
-						+addTable('Создать аналитику')
+				.table-box
 
-				.table-wrap
+					.table-box__item
 
-					.table-visible
-						.mobile
-							.table-visible__box 
-								span.table-visible__text Выводить по
-								.table-visible__area 
-									output.table-visible__num 10
+						.table-action
+							.table-action__box
+								include ./../layouts/_tableSearch.pug
+								+tableFilterBtn('default', 'Фильтр поиска')
+							.table-action__box
+								include ./../layouts/_saveTableBtn.pug
+								+addTable('Создать аналитику')
 
-					.table
-						-
-							const tableHead = [
-								{mod: 'name',     name: 'таблица'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'quantity', name: 'кол-во объявлений'},
-								{mod: 'status',      name: 'статус'},
-							]
-						.table-head 
-							.table-head__col.table--num
-								.search-number
-									span.search-number__grid # 
-									output.search-number__item 1
-								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-							each item, i in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									if(i != 1)
+						.table-wrap
+
+							.table-visible
+								.mobile
+									.table-visible__box 
+										span.table-visible__text Выводить по
+										.table-visible__area 
+											output.table-visible__num 10
+
+							.table
+								-
+									const tableHead = [
+										{mod: 'name',     name: 'таблица'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'quantity', name: 'кол-во объявлений'},
+										{mod: 'status',      name: 'статус'},
+									]
+								.table-head 
+									.table-head__col.table--num
+										.search-number
+											span.search-number__grid # 
+											output.search-number__item 1
 										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
 											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						.table__scroll
+									each item, i in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											if(i != 1)
+												svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+													path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+								.table__scroll
 
-							.table-body
+									.table-body
 
-								.position
+										.position
 
-									.desktop
-										.position__num.table--num 1
+											.desktop
+												.position__num.table--num 1
 
-									.position-data.table--name
-										.position-data__fields
-											.edit-field
-												.edit-field__pos
-													.mobile
-														.position__num 1
-													.edit-field__box
-														input.edit-field__input(type="text" value=`Nokian tyres nord`) 
-													.desktop
-														button.edit-btn.edit-btn--complete
-															svg(width='20' height='15' viewBox='0 0 20 15' fill='none' xmlns='http://www.w3.org/2000/svg')
-																path(d='M0 8L2 6L7 11L18 0L20 2L7 15L0 8Z' fill='white')
-											.edit-field 
-												.edit-field__box
-													input.edit-field__input(type="text" value=`Автозапчасти`) 
-												.desktop
-													button.edit-btn.edit-btn--record
-														svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
-															path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
-											.edit-field 
-												.edit-field__box
-													input.edit-field__input(type="text" value=`Набережные Челны`) 
-												.desktop
-													button.edit-btn.edit-btn--record
-														svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
-															path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
-										table.position-data__table
-											tr.position-data__item 
-												td.position-data__col
-													b.position-data__name URL страницы:
-												td.position-data__col.position-data__col--flex
-													a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
-													include ./../layouts/_copyBtn.pug
-											tr.position-data__item 
-												td.position-data__col
-													b.position-data__name Таблица: 
-												td.position-data__col.position-data__col--flex
-													a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM 
-													include ./../layouts/_copyBtn.pug
+											.position-data.table--name
+												.position-data__fields
+													.edit-field
+														.edit-field__pos
+															.mobile
+																.position__num 1
+															.edit-field__box
+																input.edit-field__input(type="text" value=`Nokian tyres nord`) 
+															.desktop
+																button.edit-btn.edit-btn--complete
+																	svg(width='20' height='15' viewBox='0 0 20 15' fill='none' xmlns='http://www.w3.org/2000/svg')
+																		path(d='M0 8L2 6L7 11L18 0L20 2L7 15L0 8Z' fill='white')
+													.edit-field 
+														.edit-field__box
+															input.edit-field__input(type="text" value=`Автозапчасти`) 
+														.desktop
+															button.edit-btn.edit-btn--record
+																svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																	path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+													.edit-field 
+														.edit-field__box
+															input.edit-field__input(type="text" value=`Набережные Челны`) 
+														.desktop
+															button.edit-btn.edit-btn--record
+																svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																	path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+												table.position-data__table
+													tr.position-data__item 
+														td.position-data__col
+															b.position-data__name URL страницы:
+														td.position-data__col.position-data__col--flex
+															a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
+															include ./../layouts/_copyBtn.pug
+													tr.position-data__item 
+														td.position-data__col
+															b.position-data__name Таблица: 
+														td.position-data__col.position-data__col--flex
+															a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM 
+															include ./../layouts/_copyBtn.pug
+												
+											.position-comment.table--comment
+												.mobile 
+													.position__mobiletitle Примечание
+												textarea.position-comment__textarea(placeholder="Введите примечание...")
+
+											.position-quantity.table--quantity
+												.mobile 
+													.position__mobiletitle Кол-во объявлений:
+												.position-quantity__box
+													output.position-quantity__val 100
+									
+											.position-status.table--status
+												.position-status__wrap
+													div.position-status__inner
+														.mobile 
+															.position__mobiletitle Статус
+														.position-status__box
+															include ./../layouts/_ldsRing.pug
+															span.position-status__name В работе
+														button.position-status__btn Завершить
+													button.position__del
+														svg(height='1em' viewBox='0 0 448 512')
+															path(d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z' fill="#FFF")
+														.mobile 
+															span Удалить таблицу
 										
-									.position-comment.table--comment
-										.mobile 
-											.position__mobiletitle Примечание
-										textarea.position-comment__textarea(placeholder="Введите примечание...")
+										.position
 
-									.position-quantity.table--quantity
-										.mobile 
-											.position__mobiletitle Кол-во объявлений:
-										.position-quantity__box
-											output.position-quantity__val 100
-							
-									.position-status.table--status
-										.position-status__wrap
-											div.position-status__inner
+											.desktop
+												.position__num.table--num 2
+
+											.position-data.table--name
+												.position-data__fields
+													.edit-field
+														.edit-field__pos
+															.mobile
+																.position__num 2
+															.edit-field__box
+																input.edit-field__input(type="text" value=`Apple watch 6 44 mm`) 
+															.desktop
+																button.edit-btn.edit-btn--record
+																	svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																		path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+													.edit-field 
+														.edit-field__box
+															input.edit-field__input(type="text" value=`Smart часы`) 
+														.desktop
+															button.edit-btn.edit-btn--record
+																svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																	path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+													.edit-field 
+														.edit-field__box
+															input.edit-field__input(type="text" value=`Казань`) 
+														.desktop
+															button.edit-btn.edit-btn--record
+																svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																	path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+												table.position-data__table
+													tr.position-data__item 
+														td.position-data__col
+															b.position-data__name URL страницы:
+														td.position-data__col.position-data__col--flex
+															a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
+															include ./../layouts/_copyBtn.pug
+													tr.position-data__item 
+														td.position-data__col
+															b.position-data__name Таблица: 
+														td.position-data__col.position-data__col--flex
+															a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM 
+															include ./../layouts/_copyBtn.pug
+												
+											.position-comment.table--comment
 												.mobile 
-													.position__mobiletitle Статус
-												.position-status__box
-													include ./../layouts/_ldsRing.pug
-													span.position-status__name В работе
-												button.position-status__btn Завершить
-											button.position__del
-												svg(height='1em' viewBox='0 0 448 512')
-													path(d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z' fill="#FFF")
+													.position__mobiletitle Примечание
+												textarea.position-comment__textarea Продающее описание
+
+											.position-quantity.table--quantity
 												.mobile 
-													span Удалить таблицу
-								
-								.position
+													.position__mobiletitle Кол-во объявлений:
+												.position-quantity__box
+													output.position-quantity__val 37
+									
+											.position-status.table--status
+												.position-status__wrap
+													div.position-status__inner
+														.mobile 
+															.position__mobiletitle Статус
+														.position-status__box
+															a.position-status__download(href="#")
+																svg(width='16' height='20' viewBox='0 0 16 20' fill='none')
+																	path(d='M16 7.05882H11.4286V0H4.57143V7.05882H0L8 15.2941L16 7.05882ZM0 17.6471V20H16V17.6471H0Z' fill='#004466')
+																span Скачать файл
+													button.position__del
+														svg(height='1em' viewBox='0 0 448 512')
+															path(d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z' fill="#FFF")
+														.mobile 
+															span Удалить таблицу
 
-									.desktop
-										.position__num.table--num 2
-
-									.position-data.table--name
-										.position-data__fields
-											.edit-field
-												.edit-field__pos
-													.mobile
-														.position__num 2
-													.edit-field__box
-														input.edit-field__input(type="text" value=`Apple watch 6 44 mm`) 
-													.desktop
-														button.edit-btn.edit-btn--record
-															svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
-																path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
-											.edit-field 
-												.edit-field__box
-													input.edit-field__input(type="text" value=`Smart часы`) 
-												.desktop
-													button.edit-btn.edit-btn--record
-														svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
-															path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
-											.edit-field 
-												.edit-field__box
-													input.edit-field__input(type="text" value=`Казань`) 
-												.desktop
-													button.edit-btn.edit-btn--record
-														svg(width='20' height='20' viewBox='0 0 20 20' fill='none')
-															path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
-										table.position-data__table
-											tr.position-data__item 
-												td.position-data__col
-													b.position-data__name URL страницы:
-												td.position-data__col.position-data__col--flex
-													a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
-													include ./../layouts/_copyBtn.pug
-											tr.position-data__item 
-												td.position-data__col
-													b.position-data__name Таблица: 
-												td.position-data__col.position-data__col--flex
-													a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM 
-													include ./../layouts/_copyBtn.pug
-										
-									.position-comment.table--comment
-										.mobile 
-											.position__mobiletitle Примечание
-										textarea.position-comment__textarea Продающее описание
-
-									.position-quantity.table--quantity
-										.mobile 
-											.position__mobiletitle Кол-во объявлений:
-										.position-quantity__box
-											output.position-quantity__val 37
-							
-									.position-status.table--status
-										.position-status__wrap
-											div.position-status__inner
-												.mobile 
-													.position__mobiletitle Статус
-												.position-status__box
-													a.position-status__download(href="#")
-														svg(width='16' height='20' viewBox='0 0 16 20' fill='none')
-															path(d='M16 7.05882H11.4286V0H4.57143V7.05882H0L8 15.2941L16 7.05882ZM0 17.6471V20H16V17.6471H0Z' fill='#004466')
-														span Скачать файл
-											button.position__del
-												svg(height='1em' viewBox='0 0 448 512')
-													path(d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z' fill="#FFF")
-												.mobile 
-													span Удалить таблицу
-
-				.desktop
-					+tableNav('disabled', '0', '0')
+						.desktop
+							+tableNav('disabled', '0', '0')
 
 		include ./../sections/_footer.pug
 

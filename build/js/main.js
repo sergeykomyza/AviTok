@@ -183,6 +183,44 @@ const dataPicker = () => {
 	$(".js-dataPicker").datepicker();
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const popup = ()=> {
+    const popup = document.querySelectorAll('.popup')
+    const popupBtn = document.querySelectorAll("[data-popup='popup']")  /*все кнопки, вызывающие попап, должны иметь атрибут data-popup="popup"*/
+    popup.forEach(item => {
+        const closePopupBtn = item.querySelectorAll('.js-popupClose')
+        closePopupBtn.forEach(elem => {
+            elem.addEventListener('click', function(){
+                item.classList.remove('is-open')
+				if(document.documentElement.clientWidth > 992){
+					document.documentElement.classList.remove('popup-open')
+				}
+				if(document.documentElement.clientWidth < 992){
+					const mainContent = item.closest('body').querySelector('.main')
+					mainContent.style.display = 'flex'
+				}
+            })
+        })
+    })
+    popupBtn.forEach(item => {
+        item.addEventListener('click', function(e){
+            e.preventDefault()
+            const hrefPopupBtn = item.getAttribute('href') || item.getAttribute('data-src')
+			if(document.documentElement.clientWidth > 992){
+				document.documentElement.classList.add('popup-open')
+			}
+            popup.forEach(item => {
+                item.classList.remove('is-open')
+            })
+            document.querySelector(hrefPopupBtn).classList.add('is-open')
+			if(document.documentElement.clientWidth < 992){
+				const mainContent = item.closest('body').querySelector('.main')
+				mainContent.style.display = 'none'
+			}
+        })
+    })
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
 const map = () => {
 	setTimeout(function () {
@@ -245,9 +283,10 @@ customSelect('.select', '.select__header', '.select__item', '.select__current', 
 customSelect('.table-select', '.table-select__header', '.table-select__item', '.table-select__current', '.table-select__value', 'is-active')
 mMenu()
 lkMenuToggle()
-if(document.querySelector('.table')){
+if(document.querySelector('.js-topToTableHead')){
 	topToTableHead()
 }
 dataPicker()
+popup()
 
 

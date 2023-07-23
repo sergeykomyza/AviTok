@@ -11,115 +11,117 @@ html(lang="ru")
 
 			.container
 
-				.table-action
-					.table-action__box
-						include ./../layouts/_tableSearch.pug
-						+tableFilterBtn('default', 'Фильтр поиска')
-					.table-action__box
-						include ./../layouts/_editTableBtn.pug
-						+addTable('Создать таблицу')
+				.table-box
 
-				.table-wrap
+					.table-box__item
 
-					.table-visible
-						.mobile
-							.table-visible__box 
-								span.table-visible__text Выводить по
-								.table-visible__area 
-									output.table-visible__num 10
+						.table-action
+							.table-action__box
+								include ./../layouts/_tableSearch.pug
+								+tableFilterBtn('default', 'Фильтр поиска')
+							.table-action__box
+								include ./../layouts/_editTableBtn.pug
+								+addTable('Создать таблицу')
 
-					.table
+						.table-wrap
 
-						button.table-up.js-topToTableHead
-							svg(width='14' height='9' viewbox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg')
-								path(d='M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z' fill='white')
+							.table-visible
+								.mobile
+									.table-visible__box 
+										span.table-visible__text Выводить по
+										.table-visible__area 
+											output.table-visible__num 10
 
-						-
-							const tableHead = [
-								{mod: 'name',     name: 'таблица'},
-								{mod: 'pay',      name: 'дата оплаты'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'quantity', name: 'кол-во объявлений'}
-							]
+							.table
 
-						-
-							const positions = [
-								{status: 'red',    name: 'Авто запчасти АвтоВАЗ', date: '01 Мая 2023 г',  comment: 'Не оплатили', num: '100'},
-								{status: 'green',  name: 'Авто прицепы',          date: '02 Июня 2023 г', comment: 'Обновить цены', num: '250'},
-								{status: 'red',    name: 'Телефоны Iphone',       date: '02 Мая 2023 г',  comment: 'Не оплатили / Изменить описание', num: '30'},
-								{status: 'orange', name: 'Смарт часы',            date: '04 Мая 2023 г',  comment: 'Обновить описание', num: '20'},
-								{status: 'green',  name: 'Столы',                 date: '02 Июня 2023 г', comment: 'Добавить даты выкладки', num: '60'}
-							]
+								include ./../layouts/_toUp.pug
 
-						.table-head 
-							.table-head__col.table--num
-								.search-number
-									span.search-number__grid # 
-									output.search-number__item 0
-								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-							each item in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-										path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						
-						.table__scroll
+								-
+									const tableHead = [
+										{mod: 'name',     name: 'таблица'},
+										{mod: 'pay',      name: 'дата оплаты'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'quantity', name: 'кол-во объявлений'}
+									]
 
-							.table-body 
+								-
+									const positions = [
+										{status: 'red',    name: 'Авто запчасти АвтоВАЗ', date: '01 Мая 2023 г',  comment: 'Не оплатили', num: '100'},
+										{status: 'green',  name: 'Авто прицепы',          date: '02 Июня 2023 г', comment: 'Обновить цены', num: '250'},
+										{status: 'red',    name: 'Телефоны Iphone',       date: '02 Мая 2023 г',  comment: 'Не оплатили / Изменить описание', num: '30'},
+										{status: 'orange', name: 'Смарт часы',            date: '04 Мая 2023 г',  comment: 'Обновить описание', num: '20'},
+										{status: 'green',  name: 'Столы',                 date: '02 Июня 2023 г', comment: 'Добавить даты выкладки', num: '60'}
+									]
 
-								each item, i in positions
+								.table-head 
+									.table-head__col.table--num
+										.search-number
+											span.search-number__grid # 
+											output.search-number__item 0
+										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+									each item in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+												path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
 								
-									.position 
+								.table__scroll
+
+									.table-body 
+
+										each item, i in positions
 										
-										.desktop
-											.position__num.table--num= `${i+1}`
-										
-										.position-data.table--name 
-											.position-data__title
-												.mobile
-													span.position__num 1
-												a.position-data__titlelink(href="#")= item.name 
-											table.position-data__table
+											.position 
 												
-												tr.position-data__item 
-													td.position-data__col
-														b.position-data__name Таблица: 
-													td.position-data__col.position-data__col--flex
-														a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  
-														include ./../layouts/_copyBtn.pug
-															
-												tr.position-data__item 
-													td.position-data__col
-														b.position-data__name XML Avito:
-													td.position-data__col.position-data__col--flex
-														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
-														include ./../layouts/_copyBtn.pug
-										
-										.position-pay.table--pay
-											.mobile 
-												.position__mobiletitle Дата оплаты
-											.position-pay__date
-												div(class=`position-pay__status position-pay__status--${item.status}`)
-												span= item.date
-											button.position-pay__btn Продлить
+												.desktop
+													.position__num.table--num= `${i+1}`
+												
+												.position-data.table--name 
+													.position-data__title
+														.mobile
+															span.position__num 1
+														a.position-data__titlelink(href="#")= item.name 
+													table.position-data__table
+														
+														tr.position-data__item 
+															td.position-data__col
+																b.position-data__name Таблица: 
+															td.position-data__col.position-data__col--flex
+																a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  
+																include ./../layouts/_copyBtn.pug
+																	
+														tr.position-data__item 
+															td.position-data__col
+																b.position-data__name XML Avito:
+															td.position-data__col.position-data__col--flex
+																a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
+																include ./../layouts/_copyBtn.pug
+												
+												.position-pay.table--pay
+													.mobile 
+														.position__mobiletitle Дата оплаты
+													.position-pay__date
+														div(class=`position-pay__status position-pay__status--${item.status}`)
+														span= item.date
+													button.position-pay__btn Продлить
 
-										.position-comment.table--comment
-											.mobile 
-												.position__mobiletitle Примечание
-											.position-comment__box 
-												p.position-comment__text= item.comment
-												button.position-comment__btn.position-comment__btn--edit
-													svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none')
-														path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#004466')
+												.position-comment.table--comment
+													.mobile 
+														.position__mobiletitle Примечание
+													.position-comment__box 
+														p.position-comment__text= item.comment
+														button.position-comment__btn.position-comment__btn--edit
+															svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none')
+																path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#004466')
 
-										.position-quantity.table--quantity 
-											.mobile 
-												.position__mobiletitle Кол-во объявлений:
-											.position-quantity__box
-												output.position-quantity__val= item.num
-					
-				+tableNav('', '1', '10')
+												.position-quantity.table--quantity 
+													.mobile 
+														.position__mobiletitle Кол-во объявлений:
+													.position-quantity__box
+														output.position-quantity__val= item.num
+							
+						+tableNav('', '1', '10')
 
 		include ./../sections/_footer.pug
 

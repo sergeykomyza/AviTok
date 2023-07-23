@@ -37,7 +37,7 @@ h6 {
 }
 html {
 	overflow-x: hidden;
-	&.fixed {
+	&.popup-open {
 		overflow: hidden;
 	}
 }
@@ -50,6 +50,9 @@ body {
 	line-height: normal;
 	font-weight: 400;
 	color: #000;
+	@media(max-width: 992px){
+		padding-top: 60px;
+	}
 }
 ul {
 	margin: 0;
@@ -138,15 +141,32 @@ textarea {
 }
 
 .content{
-	font-size: 18px;
+	max-width: 720px;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 16px;
+	line-height: 26px;
 	a{
 		font-weight: 600;
 		color: var(--blue);
 		text-decoration: underline;
 	}
 
+	&__title{
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 26px;
+	}
+
+	ul{
+		padding-left: 20px;
+		li{
+			list-style-type: disc;
+			line-height: 26px;
+		}
+	}
+
 	@media(max-width: 992px){
-		font-size: 16px;
 	}
 }
 
@@ -518,7 +538,7 @@ textarea {
 	}
 }
 
-.dates {
+.dates { 
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 30px;
@@ -729,9 +749,7 @@ textarea {
 	}
 
 	&__content{
-		max-width: 790px;
-		width: 100%;
-		margin: 40px auto 0;
+		margin-top: 40px;
 	}
 }
 
@@ -763,4 +781,4 @@ textarea {
 	}
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REFERAL
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МОДАЛЬНЫЕ ОКНА

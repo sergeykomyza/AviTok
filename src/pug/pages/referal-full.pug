@@ -11,154 +11,160 @@ html(lang="ru")
 
 			.container
 
-				h1.page-title Пригласительные
-				
-				.table-action
-					.table-action__box.table-action__box--mlauto
-						+addTable('Создать приглашение')
-				
-				.table-wrap
-					
-					.table-visible
-						.mobile
-							.table-visible__box 
-								span.table-visible__text Выводить по
-								.table-visible__area 
-									output.table-visible__num 10
-					
-					.table.table-invitations
-						-
-							const tableHead = [
-								{mod: 'link',     name: 'Ссылка'},
-								{mod: 'percent',  name: 'Партнерский %'},
-								{mod: 'registr',  name: 'Регистрации'},
-								{mod: 'referal',  name: 'Рефералы'},
-								{mod: 'active',   name: 'Активные'},
-								{mod: 'comment',  name: 'Примечание '}
-							]
-						.table-head.table-invitations__head
-								
-							each item, i in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									if(i != 0 && i != 5)
-										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+				.table-box 
+
+					.table-box__item
+
+						h1.page-title Пригласительные
 						
-						.table-body
-
-							each item in [1, 2]
+						.table-action
+							.table-action__box.table-action__box--mlauto
+								+addTable('Создать приглашение')
+						
+						.table-wrap
 							
-								.position 
-
-									.position-data.table--link
-										.mobile 
-											.position__mobiletitle Ссылка
-										.position-data__item
-											.position-data__col.position-data__col--flex
-												a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee504  
-												include ./../layouts/_copyBtn.pug
-
-									.position-quantity.table--percent
-										.mobile 
-											.position__mobiletitle Партнерский %
-										.position-quantity__box
-											output.position-quantity__val 0
-									
-									.position-quantity.table--registr
-										.mobile 
-											.position__mobiletitle Регистрации
-										.position-quantity__box
-											output.position-quantity__val 0
-									
-									.position-quantity.table--referal
-										.mobile 
-											.position__mobiletitle Рефералы
-										.position-quantity__box
-											output.position-quantity__val 0
-									
-									.position-quantity.table--active
-										.mobile 
-											.position__mobiletitle Активные
-										.position-quantity__box
-											output.position-quantity__val 0
-									
-									.position-comment.table--comment
-										.mobile 
-											.position__mobiletitle Примечание
-										textarea.position-comment__textarea(placeholder="Введите примечание...")
-
-				.desktop
-					+tableNav('disabled', '0', '0')
-
-				h2.page-title Рефералы
-				
-				.table-wrap
-					
-					.table.table-invitations
-						-
-							const tableHead2 = [
-								{mod: 'link',     name: 'ссылка'},
-								{mod: 'datetime', name: 'дата и время'},
-								{mod: 'email',    name: 'почта реферала'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'summa',    name: 'сумма заработка'}
-							]
-						.table-head.table-invitations__head
-
-							each item, i in tableHead2
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									if(i != 0 && i != 3)
-										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-
-						.table-body
-
-							-
-								const datas = [
-									{datetime: '2023-05-05', date: '05.05.2023', time: '10:30', email: 'Allbert@faizullin.ru', sum: '17.28'},
-									{datetime: '2023-05-06', date: '06.05.2023', time: '12:24', email: 'Zhekka@morozov.ru',    sum: '32.26'}
-								]
-
-							each item in datas
-
-								.position
-									
-									.position-data.table--link
-										.mobile 
-											.position__mobiletitle Ссылка
-										.position-data__item
-											.position-data__col.position-data__col--flex
-												a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee504  
-												include ./../layouts/_copyBtn.pug
-
-									.position-quantity.table--datetime
-											.mobile 
-												.position__mobiletitle Дата и время
-											time.position-quantity__val(datetime= item.datetime)= item.date
-											|
-											time.position-quantity__val(datetime= item.time)= item.time
+							.table-visible
+								.mobile
+									.table-visible__box 
+										span.table-visible__text Выводить по
+										.table-visible__area 
+											output.table-visible__num 10
+							
+							.table.table-invitations
+								-
+									const tableHead = [
+										{mod: 'link',     name: 'Ссылка'},
+										{mod: 'percent',  name: 'Партнерский %'},
+										{mod: 'registr',  name: 'Регистрации'},
+										{mod: 'referal',  name: 'Рефералы'},
+										{mod: 'active',   name: 'Активные'},
+										{mod: 'comment',  name: 'Примечание '}
+									]
+								.table-head.table-invitations__head
+										
+									each item, i in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											if(i != 0 && i != 5)
+												svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+													path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
 								
-									.position-quantity.table--email
-											.mobile 
-												.position__mobiletitle Почта реферала
-											.position-quantity__box
-												output.position-quantity__val= item.email
+								.table-body
 
-									.position-comment.table--comment
-										.mobile 
-											.position__mobiletitle Примечание
-										textarea.position-comment__textarea(placeholder="Введите примечание...")
+									each item in [1, 2]
+									
+										.position 
 
-									.position-quantity.table--summa
-										.mobile 
-											.position__mobiletitle Сумма заработка
-										.position-quantity__box
-											output.position-quantity__val= item.sum
+											.position-data.table--link
+												.mobile 
+													.position__mobiletitle Ссылка
+												.position-data__item
+													.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee504  
+														include ./../layouts/_copyBtn.pug
 
-				.desktop
-					+tableNav('disabled', '0', '0')
+											.position-quantity.table--percent
+												.mobile 
+													.position__mobiletitle Партнерский %
+												.position-quantity__box
+													output.position-quantity__val 0
+											
+											.position-quantity.table--registr
+												.mobile 
+													.position__mobiletitle Регистрации
+												.position-quantity__box
+													output.position-quantity__val 0
+											
+											.position-quantity.table--referal
+												.mobile 
+													.position__mobiletitle Рефералы
+												.position-quantity__box
+													output.position-quantity__val 0
+											
+											.position-quantity.table--active
+												.mobile 
+													.position__mobiletitle Активные
+												.position-quantity__box
+													output.position-quantity__val 0
+											
+											.position-comment.table--comment
+												.mobile 
+													.position__mobiletitle Примечание
+												textarea.position-comment__textarea(placeholder="Введите примечание...")
+
+						.desktop
+							+tableNav('disabled', '0', '0')
+
+					.table-box__item
+
+						h2.page-title Рефералы
+						
+						.table-wrap
+							
+							.table.table-invitations
+								-
+									const tableHead2 = [
+										{mod: 'link',     name: 'ссылка'},
+										{mod: 'datetime', name: 'дата и время'},
+										{mod: 'email',    name: 'почта реферала'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'summa',    name: 'сумма заработка'}
+									]
+								.table-head.table-invitations__head
+
+									each item, i in tableHead2
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											if(i != 0 && i != 3)
+												svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+													path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+
+								.table-body
+
+									-
+										const datas = [
+											{datetime: '2023-05-05', date: '05.05.2023', time: '10:30', email: 'Allbert@faizullin.ru', sum: '17.28'},
+											{datetime: '2023-05-06', date: '06.05.2023', time: '12:24', email: 'Zhekka@morozov.ru',    sum: '32.26'}
+										]
+
+									each item in datas
+
+										.position
+											
+											.position-data.table--link
+												.mobile 
+													.position__mobiletitle Ссылка
+												.position-data__item
+													.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee504  
+														include ./../layouts/_copyBtn.pug
+
+											.position-quantity.table--datetime
+													.mobile 
+														.position__mobiletitle Дата и время
+													time.position-quantity__val(datetime= item.datetime)= item.date
+													|
+													time.position-quantity__val(datetime= item.time)= item.time
+										
+											.position-quantity.table--email
+													.mobile 
+														.position__mobiletitle Почта реферала
+													.position-quantity__box
+														output.position-quantity__val= item.email
+
+											.position-comment.table--comment
+												.mobile 
+													.position__mobiletitle Примечание
+												textarea.position-comment__textarea(placeholder="Введите примечание...")
+
+											.position-quantity.table--summa
+												.mobile 
+													.position__mobiletitle Сумма заработка
+												.position-quantity__box
+													output.position-quantity__val= item.sum
+
+						.desktop
+							+tableNav('disabled', '0', '0')
 
 
 		include ./../sections/_footer.pug

@@ -11,95 +11,99 @@ html(lang="ru")
 
 			.container
 
-				.table-action
-					.table-action__box
-						include ./../layouts/_tableSearch.pug
-						+tableFilterBtn('default', 'Фильтр поиска')
-					.table-action__box
-						include ./../layouts/_editTableBtn.pug
-						+addTable('Создать аналитику')
+				.table-box
 
-				.table-wrap
-					.table
-						-
-							const tableHead = [
-								{mod: 'name',     name: 'таблица'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'quantity', name: 'кол-во объявлений'},
-								{mod: 'status',      name: 'статус'},
-							]
-						.table-head 
-							.table-head__col.table--num
-								.search-number
-									span.search-number__grid # 
-									output.search-number__item 1
-								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-							each item, i in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									if(i != 1)
+					.table-box__item
+
+						.table-action
+							.table-action__box
+								include ./../layouts/_tableSearch.pug
+								+tableFilterBtn('default', 'Фильтр поиска')
+							.table-action__box
+								include ./../layouts/_editTableBtn.pug
+								+addTable('Создать аналитику')
+
+						.table-wrap
+							.table
+								-
+									const tableHead = [
+										{mod: 'name',     name: 'таблица'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'quantity', name: 'кол-во объявлений'},
+										{mod: 'status',      name: 'статус'},
+									]
+								.table-head 
+									.table-head__col.table--num
+										.search-number
+											span.search-number__grid # 
+											output.search-number__item 1
 										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
 											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						
-						.table-body 
-							
-							.position 
+									each item, i in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											if(i != 1)
+												svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+													path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
 								
-								.desktop
-									.position__num.table--num 1
-
-								.position-data.table--name 
-									.position-data__title
-										.position-data__titlelinks
-											.mobile
-												span.position__num 1
-											a.position-data__titlelink(href="#") Nokian tyres nordman sx3 
-										span.position-data__divider /
-										a.position-data__titlelink(href="#") Автозапчасти 
-									.position-data__marker 
-										.position-data__titlelinks
-											a.position-data__titlelink(href="#") 
-												svg(xmlns='http://www.w3.org/2000/svg' width='14' height='20' viewBox='0 0 14 20' fill='none')
-													path(d='M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z' fill='#004466')
-												span Набережные Челны
+								.table-body 
 									
-									table.position-data__table
-
-										tr.position-data__item 
-											td.position-data__col
-												b.position-data__name URL страницы:
-											td.position-data__col.position-data__col--flex
-												a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee   
+									.position 
 										
-										tr.position-data__item 
-											td.position-data__col
-												b.position-data__name Таблица:
-											td.position-data__col.position-data__col--flex
-												a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  
-												include ./../layouts/_copyBtn.pug
-									
-								.position-comment.table--comment
-									.mobile 
-										.position__mobiletitle Примечание
-									textarea.position-comment__textarea(placeholder="Введите примечание...")
+										.desktop
+											.position__num.table--num 1
 
-								.position-quantity.table--quantity 
-									.mobile 
-										.position__mobiletitle Кол-во объявлений:
-									.position-quantity__box
-										output.position-quantity__val 100
+										.position-data.table--name 
+											.position-data__title
+												.position-data__titlelinks
+													.mobile
+														span.position__num 1
+													a.position-data__titlelink(href="#") Nokian tyres nordman sx3 
+												span.position-data__divider /
+												a.position-data__titlelink(href="#") Автозапчасти 
+											.position-data__marker 
+												.position-data__titlelinks
+													a.position-data__titlelink(href="#") 
+														svg(xmlns='http://www.w3.org/2000/svg' width='14' height='20' viewBox='0 0 14 20' fill='none')
+															path(d='M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z' fill='#004466')
+														span Набережные Челны
+											
+											table.position-data__table
 
-								.position-status.table--status
-									.mobile 
-										.position__mobiletitle Статус
-									.position-status__box
-										include ./../layouts/_ldsRing.pug
-										span.position-status__name В работе
-									button.position-status__btn Завершить
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name URL страницы:
+													td.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee   
+												
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name Таблица:
+													td.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 1UwxHa0PZnO4t0GcGAWxadsOlkFRzP0XUPYN7EWhZDnM  
+														include ./../layouts/_copyBtn.pug
+											
+										.position-comment.table--comment
+											.mobile 
+												.position__mobiletitle Примечание
+											textarea.position-comment__textarea(placeholder="Введите примечание...")
 
-				.desktop
-					+tableNav('disabled', '1', '1')
+										.position-quantity.table--quantity 
+											.mobile 
+												.position__mobiletitle Кол-во объявлений:
+											.position-quantity__box
+												output.position-quantity__val 100
+
+										.position-status.table--status
+											.mobile 
+												.position__mobiletitle Статус
+											.position-status__box
+												include ./../layouts/_ldsRing.pug
+												span.position-status__name В работе
+											button.position-status__btn Завершить
+
+						.desktop
+							+tableNav('disabled', '1', '1')
 
 		include ./../sections/_footer.pug
 

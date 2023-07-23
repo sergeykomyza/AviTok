@@ -11,100 +11,104 @@ html(lang="ru")
 
 			.container
 
-				.table-action
-					.table-action__box
-						include ./../layouts/_tableSearch.pug
-						+tableFilterBtn('default', 'Фильтр поиска')
-					.table-action__box
-						include ./../layouts/_editTableBtn.pug
-						+addTable('Создать таблицу')
+				.table-box
 
-				.table-wrap
+					.table-box__item
 
-					.table
-					
-						-
-							const tableHead = [
-								{mod: 'name',     name: 'таблица'},
-								{mod: 'pay',      name: 'дата оплаты'},
-								{mod: 'comment',  name: 'примечание'},
-								{mod: 'quantity', name: 'кол-во объявлений'}
-							]
-						.table-head 
-							.table-head__col.table--num
-								.search-number
-									span.search-number__grid # 
-									output.search-number__item 0
-								svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-									path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-							each item in tableHead
-								div(class=`table-head__col table--${item.mod}`)
-									span.table-head__name= item.name
-									svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
-										path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
-						
-						.table-body 
+						.table-action
+							.table-action__box
+								include ./../layouts/_tableSearch.pug
+								+tableFilterBtn('default', 'Фильтр поиска')
+							.table-action__box
+								include ./../layouts/_editTableBtn.pug
+								+addTable('Создать таблицу')
+
+						.table-wrap
+
+							.table
 							
-							.position 
+								-
+									const tableHead = [
+										{mod: 'name',     name: 'таблица'},
+										{mod: 'pay',      name: 'дата оплаты'},
+										{mod: 'comment',  name: 'примечание'},
+										{mod: 'quantity', name: 'кол-во объявлений'}
+									]
+								.table-head 
+									.table-head__col.table--num
+										.search-number
+											span.search-number__grid # 
+											output.search-number__item 0
+										svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+											path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
+									each item in tableHead
+										div(class=`table-head__col table--${item.mod}`)
+											span.table-head__name= item.name
+											svg.table-head__icon(width='16' height='10' viewBox='0 0 16 10' fill='none')
+												path(d='M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z' fill='white')
 								
-								.desktop
-									.position__num.table--num 1
-								
-								.position-data.table--name 
-									.position-data__title
-										.mobile
-											span.position__num 1
-										a.position-data__titlelink(href="#") Авто запчасти АвтоВАЗ 
-									table.position-data__table
+								.table-body 
+									
+									.position 
 										
-										tr.position-data__item 
-											td.position-data__col
-												b.position-data__name Таблица: 
-											td.position-data__col.position-data__col--flex.position-data__col--mcolumn
-												a.position-data__val(href="#") Добавьте таблицу Google в настройках  
-												button.edit-btn.edit-btn--add
-													svg.desktop(width='20' height='20' viewBox='0 0 20 20' fill='none')
-														path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
-													span.mobile Добавить таблицу
-
-										tr.position-data__item 
-											td.position-data__col
-												b.position-data__name XML Avito:
-											td.position-data__col.position-data__col--flex
-												a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
-												include ./../layouts/_copyBtn.pug
+										.desktop
+											.position__num.table--num 1
 										
-										tr.position-data__item
-											td.position-data__col
-												b.position-data__name Нет данных:
-											td.position-data__col.position-data__col--flex.position-data__col--mcolumn
-												span.position-data__val Яндекс токен, Avito client_id, Avito client_secret, Avito user_id, Avito user_id
-												button.edit-btn.edit-btn--add 
-													svg.desktop(width='20' height='20' viewBox='0 0 20 20' fill='none')
-														path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
-													span.mobile Добавить таблицу
-								
-								.position-pay.table--pay
-									.mobile 
-										.position__mobiletitle Дата оплаты
-									.position-pay__date
-										.position-pay__status.position-pay__status--red
-										| 01 Мая 2023 г
-									button.position-pay__btn Продлить
+										.position-data.table--name 
+											.position-data__title
+												.mobile
+													span.position__num 1
+												a.position-data__titlelink(href="#") Авто запчасти АвтоВАЗ 
+											table.position-data__table
+												
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name Таблица: 
+													td.position-data__col.position-data__col--flex.position-data__col--mcolumn
+														a.position-data__val(href="#") Добавьте таблицу Google в настройках  
+														button.edit-btn.edit-btn--add
+															svg.desktop(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+															span.mobile Добавить таблицу
 
-								.position-comment.table--comment
-									.mobile 
-										.position__mobiletitle Примечание
-									textarea.position-comment__textarea(placeholder="Введите примечание...")
+												tr.position-data__item 
+													td.position-data__col
+														b.position-data__name XML Avito:
+													td.position-data__col.position-data__col--flex
+														a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
+														include ./../layouts/_copyBtn.pug
+												
+												tr.position-data__item
+													td.position-data__col
+														b.position-data__name Нет данных:
+													td.position-data__col.position-data__col--flex.position-data__col--mcolumn
+														span.position-data__val Яндекс токен, Avito client_id, Avito client_secret, Avito user_id, Avito user_id
+														button.edit-btn.edit-btn--add 
+															svg.desktop(width='20' height='20' viewBox='0 0 20 20' fill='none')
+																path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+															span.mobile Добавить таблицу
+										
+										.position-pay.table--pay
+											.mobile 
+												.position__mobiletitle Дата оплаты
+											.position-pay__date
+												.position-pay__status.position-pay__status--red
+												| 01 Мая 2023 г
+											button.position-pay__btn Продлить
 
-								.position-quantity.table--quantity 
-									.mobile 
-										.position__mobiletitle Кол-во объявлений:
-									.position-quantity__box
-										output.position-quantity__val 100
-			
-				.desktop
-					+tableNav('disabled', '1', '1')
+										.position-comment.table--comment
+											.mobile 
+												.position__mobiletitle Примечание
+											textarea.position-comment__textarea(placeholder="Введите примечание...")
+
+										.position-quantity.table--quantity 
+											.mobile 
+												.position__mobiletitle Кол-во объявлений:
+											.position-quantity__box
+												output.position-quantity__val 100
+					
+						.desktop
+							+tableNav('disabled', '1', '1')
 
 		include ./../sections/_footer.pug
 

@@ -84,348 +84,354 @@
     </header>
     <main class="main"> 
       <div class="container">
-        <h1 class="page-title">Пригласительные</h1>
-        <div class="table-action">
-          <div class="table-action__box table-action__box--mlauto">
-                <button class="table-adding">
-                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                  </svg><span>Создать приглашение</span>
-                </button>
-          </div>
-        </div>
-        <div class="table-wrap">
-          <div class="table-visible">
-            <div class="mobile">
-              <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
-                <div class="table-visible__area"> 
-                  <output class="table-visible__num">10</output>
-                </div>
+        <div class="table-box"> 
+          <div class="table-box__item">
+            <h1 class="page-title">Пригласительные</h1>
+            <div class="table-action">
+              <div class="table-action__box table-action__box--mlauto">
+                    <button class="table-adding" data-popup="popup" data-src="#create-table">
+                      <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                      </svg><span>Создать приглашение</span>
+                    </button>
               </div>
             </div>
-          </div>
-          <div class="table table-invitations">
-            <div class="table-head table-invitations__head">
-              <div class="table-head__col table--link"><span class="table-head__name">Ссылка</span>
-              </div>
-              <div class="table-head__col table--percent"><span class="table-head__name">Партнерский %</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--registr"><span class="table-head__name">Регистрации</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--referal"><span class="table-head__name">Рефералы</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--active"><span class="table-head__name">Активные</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--comment"><span class="table-head__name">Примечание </span>
-              </div>
-            </div>
-            <div class="table-body">
-              <div class="position"> 
-                <div class="position-data table--link">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Ссылка</div>
-                  </div>
-                  <div class="position-data__item">
-                    <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
-                      <button class="copy-btn">
-                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                          <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                        </svg>
-                      </button>
+            <div class="table-wrap">
+              <div class="table-visible">
+                <div class="mobile">
+                  <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
+                    <div class="table-visible__area"> 
+                      <output class="table-visible__num">10</output>
                     </div>
                   </div>
                 </div>
-                <div class="position-quantity table--percent">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Партнерский %</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--registr">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Регистрации</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--referal">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Рефералы</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--active">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Активные</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-comment table--comment">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Примечание</div>
-                  </div>
-                  <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
-                </div>
               </div>
-              <div class="position"> 
-                <div class="position-data table--link">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Ссылка</div>
+              <div class="table table-invitations">
+                <div class="table-head table-invitations__head">
+                  <div class="table-head__col table--link"><span class="table-head__name">Ссылка</span>
                   </div>
-                  <div class="position-data__item">
-                    <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
-                      <button class="copy-btn">
-                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                          <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="position-quantity table--percent">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Партнерский %</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--registr">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Регистрации</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--referal">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Рефералы</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-quantity table--active">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Активные</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">0</output>
-                  </div>
-                </div>
-                <div class="position-comment table--comment">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Примечание</div>
-                  </div>
-                  <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="desktop">
-              <div class="table-navigation">		
-                <div class="select select-empty">
-                  <input class="select__value" type="text" value=""/>
-                  <div class="select__header">
-                    <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
-                      <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+                  <div class="table-head__col table--percent"><span class="table-head__name">Партнерский %</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
                     </svg>
-                    <div class="select__current">Показать еще</div>
                   </div>
-                  <div class="select__body">
-                    <div class="select__item" data-value="1">1</div>
-                    <div class="select__item" data-value="2">2</div>
-                    <div class="select__item" data-value="3">3</div>
-                    <div class="select__item" data-value="4">4</div>
-                    <div class="select__item" data-value="5">5</div>
+                  <div class="table-head__col table--registr"><span class="table-head__name">Регистрации</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="table-head__col table--referal"><span class="table-head__name">Рефералы</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="table-head__col table--active"><span class="table-head__name">Активные</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="table-head__col table--comment"><span class="table-head__name">Примечание </span>
                   </div>
                 </div>
-                <div class="table-selection">c &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; строки 
+                <div class="table-body">
+                  <div class="position"> 
+                    <div class="position-data table--link">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Ссылка</div>
+                      </div>
+                      <div class="position-data__item">
+                        <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
+                          <button class="copy-btn">
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--percent">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Партнерский %</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--registr">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Регистрации</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--referal">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Рефералы</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--active">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Активные</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-comment table--comment">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Примечание</div>
+                      </div>
+                      <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
+                    </div>
+                  </div>
+                  <div class="position"> 
+                    <div class="position-data table--link">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Ссылка</div>
+                      </div>
+                      <div class="position-data__item">
+                        <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
+                          <button class="copy-btn">
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--percent">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Партнерский %</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--registr">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Регистрации</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--referal">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Рефералы</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--active">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Активные</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">0</output>
+                      </div>
+                    </div>
+                    <div class="position-comment table--comment">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Примечание</div>
+                      </div>
+                      <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
+                    </div>
+                  </div>
                 </div>
-                <div class="table-visible">
-                  <div class="desktop">
-                    <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
-                      <div class="table-visible__area"> 
-                        <output class="table-visible__num">10</output>
+              </div>
+            </div>
+            <div class="desktop">
+                  <div class="table-navigation">		
+                    <div class="select select-empty">
+                      <input class="select__value" type="text" value=""/>
+                      <div class="select__header">
+                        <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+                          <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
+                        </svg>
+                        <div class="select__current">Показать еще</div>
+                      </div>
+                      <div class="select__body">
+                        <div class="select__item" data-value="1">1</div>
+                        <div class="select__item" data-value="2">2</div>
+                        <div class="select__item" data-value="3">3</div>
+                        <div class="select__item" data-value="4">4</div>
+                        <div class="select__item" data-value="5">5</div>
+                      </div>
+                    </div>
+                    <div class="table-selection">c &nbsp; 
+                      <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
+                      <output class="table-selection__period">0</output> &nbsp; строки 
+                    </div>
+                    <div class="table-visible">
+                      <div class="desktop">
+                        <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
+                          <div class="table-visible__area"> 
+                            <output class="table-visible__num">10</output>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="table-box__item">
+            <h2 class="page-title">Рефералы</h2>
+            <div class="table-wrap">
+              <div class="table table-invitations">
+                <div class="table-head table-invitations__head">
+                  <div class="table-head__col table--link"><span class="table-head__name">ссылка</span>
+                  </div>
+                  <div class="table-head__col table--datetime"><span class="table-head__name">дата и время</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="table-head__col table--email"><span class="table-head__name">почта реферала</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="table-head__col table--comment"><span class="table-head__name">примечание</span>
+                  </div>
+                  <div class="table-head__col table--summa"><span class="table-head__name">сумма заработка</span>
+                    <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                      <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="table-body">
+                  <div class="position">
+                    <div class="position-data table--link">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Ссылка</div>
+                      </div>
+                      <div class="position-data__item">
+                        <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
+                          <button class="copy-btn">
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--datetime">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Дата и время</div>
+                      </div>
+                      <time class="position-quantity__val" datetime="2023-05-05">05.05.2023</time>
+                      <time class="position-quantity__val" datetime="10:30">10:30</time>
+                    </div>
+                    <div class="position-quantity table--email">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Почта реферала</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">Allbert@faizullin.ru</output>
+                      </div>
+                    </div>
+                    <div class="position-comment table--comment">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Примечание</div>
+                      </div>
+                      <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
+                    </div>
+                    <div class="position-quantity table--summa">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Сумма заработка</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">17.28</output>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="position">
+                    <div class="position-data table--link">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Ссылка</div>
+                      </div>
+                      <div class="position-data__item">
+                        <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
+                          <button class="copy-btn">
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                              <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position-quantity table--datetime">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Дата и время</div>
+                      </div>
+                      <time class="position-quantity__val" datetime="2023-05-06">06.05.2023</time>
+                      <time class="position-quantity__val" datetime="12:24">12:24</time>
+                    </div>
+                    <div class="position-quantity table--email">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Почта реферала</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">Zhekka@morozov.ru</output>
+                      </div>
+                    </div>
+                    <div class="position-comment table--comment">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Примечание</div>
+                      </div>
+                      <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
+                    </div>
+                    <div class="position-quantity table--summa">
+                      <div class="mobile"> 
+                        <div class="position__mobiletitle">Сумма заработка</div>
+                      </div>
+                      <div class="position-quantity__box">
+                        <output class="position-quantity__val">32.26</output>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-        </div>
-        <h2 class="page-title">Рефералы</h2>
-        <div class="table-wrap">
-          <div class="table table-invitations">
-            <div class="table-head table-invitations__head">
-              <div class="table-head__col table--link"><span class="table-head__name">ссылка</span>
-              </div>
-              <div class="table-head__col table--datetime"><span class="table-head__name">дата и время</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--email"><span class="table-head__name">почта реферала</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
-              <div class="table-head__col table--comment"><span class="table-head__name">примечание</span>
-              </div>
-              <div class="table-head__col table--summa"><span class="table-head__name">сумма заработка</span>
-                <svg class="table-head__icon" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M2.82843 0C1.04662 0 0.154284 2.15428 1.41421 3.41421L6.58579 8.58579C7.36684 9.36684 8.63317 9.36683 9.41421 8.58579L14.5858 3.41421C15.8457 2.15428 14.9534 0 13.1716 0H2.82843Z" fill="white"></path>
-                </svg>
-              </div>
             </div>
-            <div class="table-body">
-              <div class="position">
-                <div class="position-data table--link">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Ссылка</div>
-                  </div>
-                  <div class="position-data__item">
-                    <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
-                      <button class="copy-btn">
-                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                          <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+            <div class="desktop">
+                  <div class="table-navigation">		
+                    <div class="select select-empty">
+                      <input class="select__value" type="text" value=""/>
+                      <div class="select__header">
+                        <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
+                          <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
                         </svg>
-                      </button>
+                        <div class="select__current">Показать еще</div>
+                      </div>
+                      <div class="select__body">
+                        <div class="select__item" data-value="1">1</div>
+                        <div class="select__item" data-value="2">2</div>
+                        <div class="select__item" data-value="3">3</div>
+                        <div class="select__item" data-value="4">4</div>
+                        <div class="select__item" data-value="5">5</div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="position-quantity table--datetime">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Дата и время</div>
-                  </div>
-                  <time class="position-quantity__val" datetime="2023-05-05">05.05.2023</time>
-                  <time class="position-quantity__val" datetime="10:30">10:30</time>
-                </div>
-                <div class="position-quantity table--email">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Почта реферала</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">Allbert@faizullin.ru</output>
-                  </div>
-                </div>
-                <div class="position-comment table--comment">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Примечание</div>
-                  </div>
-                  <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
-                </div>
-                <div class="position-quantity table--summa">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Сумма заработка</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">17.28</output>
-                  </div>
-                </div>
-              </div>
-              <div class="position">
-                <div class="position-data table--link">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Ссылка</div>
-                  </div>
-                  <div class="position-data__item">
-                    <div class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee504  </a>
-                      <button class="copy-btn">
-                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                          <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                        </svg>
-                      </button>
+                    <div class="table-selection">c &nbsp; 
+                      <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
+                      <output class="table-selection__period">0</output> &nbsp; строки 
                     </div>
-                  </div>
-                </div>
-                <div class="position-quantity table--datetime">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Дата и время</div>
-                  </div>
-                  <time class="position-quantity__val" datetime="2023-05-06">06.05.2023</time>
-                  <time class="position-quantity__val" datetime="12:24">12:24</time>
-                </div>
-                <div class="position-quantity table--email">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Почта реферала</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">Zhekka@morozov.ru</output>
-                  </div>
-                </div>
-                <div class="position-comment table--comment">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Примечание</div>
-                  </div>
-                  <textarea class="position-comment__textarea" placeholder="Введите примечание..."></textarea>
-                </div>
-                <div class="position-quantity table--summa">
-                  <div class="mobile"> 
-                    <div class="position__mobiletitle">Сумма заработка</div>
-                  </div>
-                  <div class="position-quantity__box">
-                    <output class="position-quantity__val">32.26</output>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="desktop">
-              <div class="table-navigation">		
-                <div class="select select-empty">
-                  <input class="select__value" type="text" value=""/>
-                  <div class="select__header">
-                    <svg class="select__icon" width="14" height="9" viewbox="0 0 14 9" fill="none">
-                      <path d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z" fill="white"></path>
-                    </svg>
-                    <div class="select__current">Показать еще</div>
-                  </div>
-                  <div class="select__body">
-                    <div class="select__item" data-value="1">1</div>
-                    <div class="select__item" data-value="2">2</div>
-                    <div class="select__item" data-value="3">3</div>
-                    <div class="select__item" data-value="4">4</div>
-                    <div class="select__item" data-value="5">5</div>
-                  </div>
-                </div>
-                <div class="table-selection">c &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; по &nbsp; 
-                  <output class="table-selection__period">0</output> &nbsp; строки 
-                </div>
-                <div class="table-visible">
-                  <div class="desktop">
-                    <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
-                      <div class="table-visible__area"> 
-                        <output class="table-visible__num">10</output>
+                    <div class="table-visible">
+                      <div class="desktop">
+                        <div class="table-visible__box"> <span class="table-visible__text">Выводить по</span>
+                          <div class="table-visible__area"> 
+                            <output class="table-visible__num">10</output>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
