@@ -1,0 +1,19 @@
+.popup#activate-table
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Активировать таблицу
+		
+		.content
+			p Таблица будет активирована прямо сейчас на #[b(style="color:#00AAFF") 30 дней]
+			br
+			p Количество объявлений - 100 за 200 монет!
+			br
+			b.content__title Важно!
+			br
+			br
+			p Если хотите сделать лимит больше или меньше, закройте это окно и измените количество объявлений!
+
+		.popup-actions
+			button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+			button.popup-actions__btn.popup-actions__btn--ok Активировать

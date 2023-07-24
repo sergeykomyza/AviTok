@@ -183,18 +183,26 @@ const dataPicker = () => {
 	$(".js-dataPicker").datepicker();
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ЛОГИКА МОДАЛЬНЫХ ОКОН (ВСЕ МОДАЛКИ ДОЛЖНЫ ЛЕЖАТЬ ВНЕ ТЕГА MAIN !!!)
 const popup = ()=> {
     const popup = document.querySelectorAll('.popup')
-    const popupBtn = document.querySelectorAll("[data-popup='popup']")  /*все кнопки, вызывающие попап, должны иметь атрибут data-popup="popup"*/
+	/*все кнопки, вызывающие попап, должны иметь атрибут data-popup="popup"*/
+    const popupBtn = document.querySelectorAll("[data-popup='popup']") 
+	/*перебираем все попапы*/  
     popup.forEach(item => {
+		/* в каждом из них находим элементы с классом js-popupClose */ 
         const closePopupBtn = item.querySelectorAll('.js-popupClose')
+		/*перебираем эти элементы*/ 
         closePopupBtn.forEach(elem => {
+			/*кликаем по ним*/ 
             elem.addEventListener('click', function(){
+				/*данный попап закрываем*/ 
                 item.classList.remove('is-open')
+				/*если это десктоп, разрешаем прокрутку документа*/ 
 				if(document.documentElement.clientWidth > 992){
 					document.documentElement.classList.remove('popup-open')
 				}
+				/*если это мобилка, возвращаем весь контент, лежащий в теге main*/ 
 				if(document.documentElement.clientWidth < 992){
 					const mainContent = item.closest('body').querySelector('.main')
 					mainContent.style.display = 'flex'
@@ -202,18 +210,29 @@ const popup = ()=> {
             })
         })
     })
-    popupBtn.forEach(item => {
-        item.addEventListener('click', function(e){
+	/*перебираем кнопки вызова*/
+    popupBtn.forEach(item => { 
+		/*кликаем по одной из них*/
+        item.addEventListener('click', function(e){ 
             e.preventDefault()
-            const hrefPopupBtn = item.getAttribute('href') || item.getAttribute('data-src')
+			/*вызывать попап может либо ссылка с атрибутом href="#modalName" 
+			либо любой элемент с атрибутом data-src="#modalName"*/
+            const hrefPopupBtn = item.getAttribute('href') || item.getAttribute('data-src') 
+			/*на десктопе при вызове попап запрещаем прокрутку документу (на моб. прокрутка будет)*/
 			if(document.documentElement.clientWidth > 992){
 				document.documentElement.classList.add('popup-open')
 			}
+			/*перебираем все попапы и закрываем их*/
             popup.forEach(item => {
                 item.classList.remove('is-open')
             })
+			/*открываем только то окно, id которого соответствует атрибуту у кликнутой кнопки*/
             document.querySelector(hrefPopupBtn).classList.add('is-open')
+			/*на мобилке скрываем весь контент, лежащий в теге main, и его заменяет попап, 
+			который становится position: static*/
 			if(document.documentElement.clientWidth < 992){
+				/*при открытии скроллим страницу вверх*/
+				document.documentElement.scroll({top: 0, left: 0, behavior: 'smooth' });
 				const mainContent = item.closest('body').querySelector('.main')
 				mainContent.style.display = 'none'
 			}

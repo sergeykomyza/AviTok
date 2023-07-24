@@ -1,0 +1,13 @@
+.popup.replenish-account#replenish-account
+	.popup__body.popup__body--470
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Сохранить изменения?
+
+		.replenish-account__field 
+			p.replenish-account__title Сумма
+			input.replenish-account__input(type="text" placeholder="Введите сумму")
+		
+		.popup-actions
+			button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+			button.popup-actions__btn.popup-actions__btn--ok Пополнить

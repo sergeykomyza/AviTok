@@ -5,9 +5,55 @@ html(lang="ru")
 		title Avi-tok | Templates
 	body
 		include ./../sections/_header.pug
-		.templates
-
+		
+		main.main.templates
+	
 			.container
+
+				br
+				br
+
+				h1 Модальные окна
+
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#create-table") Создать таблицу
+
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#explanation-table") Как создать
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#activate-table") Активировать таблицу
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#delete-table") Удалить таблицу
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#save-change") Сохранить изменения
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#create-analytics") Создать аналитику
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#explanation-url") Откуда взять урл страницы
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#successful") Успешно
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#replenish-account") Пополнить счет
+				
+				br
+
+				button.position-pay__btn(data-popup="popup" data-src="#invite") Создать приглашение?
 
 				br
 				br
@@ -63,6 +109,15 @@ html(lang="ru")
 				br
 
 				include ./../layouts/_date.pug
+
+		// ВСЕ МОДАЛКИ ДОЛЖНЫ ЛЕЖАТЬ ВНЕ ТЕГА MAIN !!!
+		include ./../layouts/_popupCreateTable.pug
+		include ./../layouts/_popupActivateTable.pug
+		include ./../layouts/_popupSaveChange.pug
+		include ./../layouts/_popupDeleteTable.pug
+		include ./../layouts/_popupCreateAnalytics.pug
+		include ./../layouts/_popupFinance.pug
+		include ./../layouts/_popupInvite.pug
 
 		include ./../sections/_footer.pug
 		

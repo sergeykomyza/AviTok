@@ -5,9 +5,34 @@ html(lang="ru")
 		title Avi-tok | Enter/Registration
 	body
 
-		include ./../sections/_header.pug
+		header.header
+			.container
+				.header__box.header__box--center
 
-		
+					img.logo(src="img/header-logo.svg", alt="logo")
+					
+					.mobile
+						button.gamburger
+							each span in [1, 2, 3]
+								span
+				.mobile
+					.m-menu
+						.m-menu__inner
+							.header__actions
+								a.header__enter(href="#") Войти
+								a.header__registration(href="#") Регистрация 
+
+		main.main
+
+			.enter 
+
+				img(src="img/logo-half-1.png", alt="@").enter__logo.enter__logo--left
+
+				.enter__form 
+
+					
+
+				img(src="img/logo-half-2.png", alt="@").enter__logo.enter__logo--right
 
 		include ./../sections/_footer.pug
 

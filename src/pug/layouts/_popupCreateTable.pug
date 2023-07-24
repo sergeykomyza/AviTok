@@ -1,0 +1,80 @@
+.popup#create-table
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Создать таблицу
+		
+		.position.position--mobnp 
+			.position-data.position-data--modal
+				
+				.edit-field
+					.edit-field__pos
+						.edit-field__box
+							input.edit-field__input(type="text" placeholder="Введите название таблицы")
+
+				table.position-data__table
+					tr.position-data__item 
+						td.position-data__col
+							b.position-data__name XML Avito:
+						td.position-data__col.position-data__col--flex
+							a.position-data__val(href="#") 5042fade-b616-45c9-8221-8323cc2e11ee  
+							include ./../layouts/_copyBtn.pug
+
+				.position-data__fields 
+					-
+						const fields = [{name: 'Яндекс токен', value: '5042fadeb616-45c9-8221-8323cc2e11eeasdghsdfgsadgadg', classBtn: 'record'}, {name: 'Avito client_id', value: '', classBtn: 'add'}, {name: 'Avito client_secret', value: '', classBtn: 'add'}, {name: 'Avito user_id', value: '', classBtn: 'add'}, {name: 'Таблица Google', value: '', classBtn: 'add'}]
+					each elem in fields 
+						.edit-field
+							.mobile 
+								span.edit-field__name= elem.name
+							.edit-field__box
+								.desktop
+									span.edit-field__name= elem.name
+								input(class=`${elem.classBtn === 'record' ? 'edit-field__input edit-field__input--underline' : 'edit-field__input'}` type="text" value= elem.value)
+							.desktop
+								button(class=`edit-btn edit-btn--${elem.classBtn}`)
+									if(elem.classBtn == 'record')
+										svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none')
+											path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+									else 
+										svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+											path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+
+				.create-info 
+					a.create-info__btn(data-popup="popup" href="#explanation-table") Как создать? 
+
+				.popup-actions
+					button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+					button.popup-actions__btn.popup-actions__btn--ok Создать таблицу
+
+.popup.explanation-table#explanation-table
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Как создать таблицу?
+
+		ul.explanation-list 
+			each item, i in ['Перейдите по <a href="https://docs.google.com/spreadsheets/d/1iZiPNNjReXtxF65ZMmodkPmuLvR-DVAv7Uow_4QsZOM/edit#gid=0" target="_blank">ссылке</a> в таблицу','Сделайте копию ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr1.jpg" target="_blank">вот так</a> )','В новой таблице откройте доступ по ссылке с возможностью редактировать ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr2.jpg" target="_blank">вот так </a>)','Вставляем ссылку ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr3.jpg" target="_blank">вот так </a>)']
+				li.explanation-list__item
+					span.explanation-list__num= `${i+1}`
+					span.explanation-list__text !{item}
+
+		.tooltip.tooltip--popup
+			svg.tooltip__icon(width='20' height='20' viewBox='0 0 20 20' fill='none')
+				path(d='M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z' fill='#00AAFF')
+			p.tooltip__text Если ваша категория Автозапчасти, Транспорт и Перевозки, Вакансии или Услуги, достаньте вкладку в Гамбургере, слева от вкладок (4 полоски) и уберите из названия вкладки (!) ( #[a(href="https://lk.agishev-autoz.ru/assets/howto-table/scr4.jpg" target="_blank") вот так] )
+		
+		.tooltip.tooltip--popup
+			svg.tooltip__icon(width='20' height='20' viewBox='0 0 20 20' fill='none')
+				path(d='M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z' fill='#00AAFF')
+			p.tooltip__text В одной вкладке может быть не более 5.000 строк. Если необходимо больше, вам следует создать дополнительные вкладки с приставкой #1 #2 #3 … #999 ( #[a(href="https://lk.agishev-autoz.ru/assets/howto-table/scr6.jpg" target="_blank") вот так] )
+
+		.explanation-info
+			p.explanation-info__title Дополнительно: ( #[a(href="#" target="_blank") СКРИН] )
+			ul.explanation-info__list 
+				each item, i in [{icon: 'icon-good.svg', text: 'Название таблицы может быть любое'}, {icon: 'icon-bad.svg', text: 'Название вкладок менять нельзя'}, {icon: 'icon-good.svg', text: 'Вкладки можно менять местами и добавлять свои'}, {icon: 'icon-bad.svg', text: 'Название столбиков менять нельзя'}, {icon: 'icon-good.svg', text: 'Столбики можно менять местами и добавлять свои'}]
+					li.explanation-info__item 
+						img.explanation-info__icon(src="img/" + item.icon, alt="icon")
+						span.explanation-info__text= item.text
+
+		button.explanation-table__button Ok

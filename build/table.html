@@ -103,7 +103,7 @@
                     </button>
               </div>
               <div class="table-action__box">
-                    <button class="table-adding" data-popup="popup" data-src="#create-table">
+                    <button class="table-adding">
                       <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
                       </svg><span>Создать таблицу</span>
@@ -145,7 +145,7 @@
                 <div class="table-body table-empty"> 
                   <div class="table-empty__text">У вас нет таблиц, создайте новую!</div>
                   <div class="desktop">
-                    <button class="table-empty__btn animate-boxshadow" data-popup="popup" data-src="#create-table">
+                    <button class="table-empty__btn animate-boxshadow">
                       <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
                       </svg><span>Создать таблицу</span>
@@ -197,126 +197,6 @@
         </div>
       </div>
     </main>
-    <div class="popup" id="create-table">
-      <div class="popup__body popup__body--720">
-        <button class="popup__close js-popupClose"> 
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
-          </svg>
-        </button>
-        <div class="popup__title">Создать таблицу</div>
-        <div class="position"> 
-          <div class="position-data position-data--modal">
-            <div class="edit-field">
-              <div class="edit-field__pos">
-                <div class="edit-field__box">
-                  <input class="edit-field__input" type="text" placeholder="Введите название таблицы"/>
-                </div>
-              </div>
-            </div>
-            <table class="position-data__table">
-              <tr class="position-data__item"> 
-                <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
-                <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
-                  <button class="copy-btn">
-                    <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
-                      <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            </table>
-            <div class="position-data__fields"> 
-              <div class="edit-field">
-                <div class="mobile"> <span class="edit-field__name">Яндекс токен</span></div>
-                <div class="edit-field__box">
-                  <div class="desktop"><span class="edit-field__name">Яндекс токен</span></div>
-                  <input class="edit-field__input edit-field__input--underline" type="text" value="5042fadeb616-45c9-8221-8323cc2e11eeasdghsdfgsadgadg"/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--record">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="edit-field">
-                <div class="mobile"> <span class="edit-field__name">Avito client_id</span></div>
-                <div class="edit-field__box">
-                  <div class="desktop"><span class="edit-field__name">Avito client_id</span></div>
-                  <input class="edit-field__input" type="text" value=""/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--add">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="edit-field">
-                <div class="mobile"> <span class="edit-field__name">Avito client_secret</span></div>
-                <div class="edit-field__box">
-                  <div class="desktop"><span class="edit-field__name">Avito client_secret</span></div>
-                  <input class="edit-field__input" type="text" value=""/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--add">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="edit-field">
-                <div class="mobile"> <span class="edit-field__name">Avito user_id</span></div>
-                <div class="edit-field__box">
-                  <div class="desktop"><span class="edit-field__name">Avito user_id</span></div>
-                  <input class="edit-field__input" type="text" value=""/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--add">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="edit-field">
-                <div class="mobile"> <span class="edit-field__name">Таблица Google</span></div>
-                <div class="edit-field__box">
-                  <div class="desktop"><span class="edit-field__name">Таблица Google</span></div>
-                  <input class="edit-field__input" type="text" value=""/>
-                </div>
-                <div class="desktop">
-                  <button class="edit-btn edit-btn--add">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="create-info"> <a class="create-info__btn" data-popup="popup" href="#explanation-table">Как создать? </a></div>
-            <div class="popup-actions">
-              <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
-              <button class="popup-actions__btn popup-actions__btn--ok">Создать таблицу</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="popup" id="explanation-table"> 
-      <div class="popup__body popup__body--720">
-        <button class="popup__close js-popupClose"> 
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
-          </svg>
-        </button>
-        <div class="popup__title">Как создать таблицу?</div>
-      </div>
-    </div>
     <footer class="footer">
       <div class="container">
         <div class="footer__box">

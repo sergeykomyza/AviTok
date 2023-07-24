@@ -1,0 +1,82 @@
+.popup#create-analytics
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Создать аналитику
+
+		.position.position--mobnp 
+			.position-data.position-data--modal
+				.position-data__fields
+					each item in ['Введите название','Введите название категории','Введите город','Введите количество объявлений']
+						.edit-field
+							.edit-field__pos
+								.edit-field__box
+									input.edit-field__input(type="text" placeholder=`${item}`)
+
+				.tooltip.tooltip--popup
+					svg.tooltip__icon(width='20' height='20' viewBox='0 0 20 20' fill='none')
+						path(d='M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z' fill='#00AAFF')
+					p.tooltip__text Количество объявлений не может быть #[b(style="color:#00AAFF") меньше 0] и #[b(style="color:#00AAFF") больше 100] !
+
+				.position-data__fields 
+					-
+						const fields2 = [{name: 'URL страницы', value: 'https://www.avito.ru/kazan/dlya_biznesa', classBtn: 'record'}]
+					each elem in fields2 
+						.edit-field
+							.mobile 
+								span.edit-field__name= elem.name
+							.edit-field__box
+								.desktop
+									span.edit-field__name= elem.name
+								input(class=`${elem.classBtn === 'record' ? 'edit-field__input edit-field__input--underline' : 'edit-field__input'}` type="text" value= elem.value)
+							.desktop
+								button(class=`edit-btn edit-btn--${elem.classBtn}`)
+									if(elem.classBtn == 'record')
+										svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none')
+											path(d='M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z' fill='#FFF')
+									else 
+										svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+											path(d='M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z' fill='white')
+
+				.create-info 
+					a.create-info__btn(data-popup="popup" href="#explanation-url") Как получить ссылку? 
+		
+		.popup-actions
+			button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+			button.popup-actions__btn.popup-actions__btn--ok Начать
+
+.popup.explanation-table#explanation-url
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title.explanation-table__title Откуда взять url страницы?
+
+		ul.explanation-list 
+			each item, i in ['Перейдите на сайт <a href="#" target="_blank">Avito.ru</a>','Выберите город ( <a href="#" target="_blank">вот так</a> )','Выберите необходимую категорию <br> Например: Транспорт  ›  Audi  ›  Q7 ( <a href="#" target="_blank">вот так </a>)','Копируем ссылку с адресной строки ( <a href="#" target="_blank">вот так </a>)','Скопированную ссылку, вставляем в поле <b style="color:#00AAFF">URL страницы</b> ( <a href="#" target="_blank">вот так </a>)']
+				li.explanation-list__item
+					span.explanation-list__num= `${i+1}`
+					span.explanation-list__text !{item}
+
+		.popup-actions
+			button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+			button.popup-actions__btn.popup-actions__btn--ok Начать
+
+.popup.explanation-table#successful
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Успешно!
+
+		.content 
+
+			p Мы начали собирать данные!
+
+			br
+
+			p После завершения сбора аналитики мы вышлем на #[a(href="#" target="_blank") Вашу эл. почту письмо] о завершении загрузки.
+
+			br
+
+			p Также вы можете сами в любой момент #[a(href="#" target="_blank") завершить сбор аналитики.]
+
+		button.explanation-table__button Ok

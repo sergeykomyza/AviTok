@@ -82,8 +82,19 @@
         </div>
       </div>
     </header>
-    <div class="templates">
+    <main class="main templates">
       <div class="container"><br/><br/>
+        <h1>Модальные окна</h1><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#create-table">Создать таблицу</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#explanation-table">Как создать</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#activate-table">Активировать таблицу</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#delete-table">Удалить таблицу</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#save-change">Сохранить изменения</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#create-analytics">Создать аналитику</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#explanation-url">Откуда взять урл страницы</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#successful">Успешно</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#replenish-account">Пополнить счет</button><br/>
+        <button class="position-pay__btn" data-popup="popup" data-src="#invite">Создать приглашение?</button><br/><br/>
         <h1>Действия, Кнопки</h1><br/>
             <button class="table-filter">
               <svg width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -139,6 +150,352 @@
             <path d="M16.2 1.81818H15.3V0H13.5V1.81818H4.5V0H2.7V1.81818H1.8C0.81 1.81818 0 2.63636 0 3.63636V18.1818C0 19.1818 0.81 20 1.8 20H16.2C17.19 20 18 19.1818 18 18.1818V3.63636C18 2.63636 17.19 1.81818 16.2 1.81818ZM16.2 18.1818H1.8V6.36364H16.2V18.1818Z" fill="#004466"></path>
           </svg>
           <input class="date__input js-dataPicker" type="text"/>
+        </div>
+      </div>
+    </main>
+    <!-- ВСЕ МОДАЛКИ ДОЛЖНЫ ЛЕЖАТЬ ВНЕ ТЕГА MAIN !!!-->
+    <div class="popup" id="create-table">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Создать таблицу</div>
+        <div class="position position--mobnp"> 
+          <div class="position-data position-data--modal">
+            <div class="edit-field">
+              <div class="edit-field__pos">
+                <div class="edit-field__box">
+                  <input class="edit-field__input" type="text" placeholder="Введите название таблицы"/>
+                </div>
+              </div>
+            </div>
+            <table class="position-data__table">
+              <tr class="position-data__item"> 
+                <td class="position-data__col"><b class="position-data__name">XML Avito:</b></td>
+                <td class="position-data__col position-data__col--flex"><a class="position-data__val" href="#">5042fade-b616-45c9-8221-8323cc2e11ee  </a>
+                  <button class="copy-btn">
+                    <svg width="17" height="20" viewBox="0 0 17 20" fill="none">
+                      <path d="M12.5263 0H1.78947C0.805263 0 0 0.818182 0 1.81818V14.5455H1.78947V1.81818H12.5263V0ZM15.2105 3.63636H5.36842C4.38421 3.63636 3.57895 4.45455 3.57895 5.45455V18.1818C3.57895 19.1818 4.38421 20 5.36842 20H15.2105C16.1947 20 17 19.1818 17 18.1818V5.45455C17 4.45455 16.1947 3.63636 15.2105 3.63636ZM15.2105 18.1818H5.36842V5.45455H15.2105V18.1818Z" fill="#004466"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <div class="position-data__fields"> 
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">Яндекс токен</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">Яндекс токен</span></div>
+                  <input class="edit-field__input edit-field__input--underline" type="text" value="5042fadeb616-45c9-8221-8323cc2e11eeasdghsdfgsadgadg"/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--record">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">Avito client_id</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">Avito client_id</span></div>
+                  <input class="edit-field__input" type="text" value=""/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">Avito client_secret</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">Avito client_secret</span></div>
+                  <input class="edit-field__input" type="text" value=""/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">Avito user_id</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">Avito user_id</span></div>
+                  <input class="edit-field__input" type="text" value=""/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">Таблица Google</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">Таблица Google</span></div>
+                  <input class="edit-field__input" type="text" value=""/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 11.4286H11.4286V20H8.57143V11.4286H0V8.57143H8.57143V0H11.4286V8.57143H20V11.4286Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="create-info"> <a class="create-info__btn" data-popup="popup" href="#explanation-table">Как создать? </a></div>
+            <div class="popup-actions">
+              <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+              <button class="popup-actions__btn popup-actions__btn--ok">Создать таблицу</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup explanation-table" id="explanation-table">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Как создать таблицу?</div>
+        <ul class="explanation-list"> 
+          <li class="explanation-list__item"><span class="explanation-list__num">1</span><span class="explanation-list__text">Перейдите по <a href="https://docs.google.com/spreadsheets/d/1iZiPNNjReXtxF65ZMmodkPmuLvR-DVAv7Uow_4QsZOM/edit#gid=0" target="_blank">ссылке</a> в таблицу</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">2</span><span class="explanation-list__text">Сделайте копию ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr1.jpg" target="_blank">вот так</a> )</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">3</span><span class="explanation-list__text">В новой таблице откройте доступ по ссылке с возможностью редактировать ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr2.jpg" target="_blank">вот так </a>)</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">4</span><span class="explanation-list__text">Вставляем ссылку ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr3.jpg" target="_blank">вот так </a>)</span></li>
+        </ul>
+        <div class="tooltip tooltip--popup">
+          <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
+          </svg>
+          <p class="tooltip__text">Если ваша категория Автозапчасти, Транспорт и Перевозки, Вакансии или Услуги, достаньте вкладку в Гамбургере, слева от вкладок (4 полоски) и уберите из названия вкладки (!) ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr4.jpg" target="_blank">вот так</a> )</p>
+        </div>
+        <div class="tooltip tooltip--popup">
+          <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
+          </svg>
+          <p class="tooltip__text">В одной вкладке может быть не более 5.000 строк. Если необходимо больше, вам следует создать дополнительные вкладки с приставкой #1 #2 #3 … #999 ( <a href="https://lk.agishev-autoz.ru/assets/howto-table/scr6.jpg" target="_blank">вот так</a> )</p>
+        </div>
+        <div class="explanation-info">
+          <p class="explanation-info__title">Дополнительно: ( <a href="#" target="_blank">СКРИН</a> )</p>
+          <ul class="explanation-info__list"> 
+            <li class="explanation-info__item"> <img class="explanation-info__icon" src="img/icon-good.svg" alt="icon"/><span class="explanation-info__text">Название таблицы может быть любое</span></li>
+            <li class="explanation-info__item"> <img class="explanation-info__icon" src="img/icon-bad.svg" alt="icon"/><span class="explanation-info__text">Название вкладок менять нельзя</span></li>
+            <li class="explanation-info__item"> <img class="explanation-info__icon" src="img/icon-good.svg" alt="icon"/><span class="explanation-info__text">Вкладки можно менять местами и добавлять свои</span></li>
+            <li class="explanation-info__item"> <img class="explanation-info__icon" src="img/icon-bad.svg" alt="icon"/><span class="explanation-info__text">Название столбиков менять нельзя</span></li>
+            <li class="explanation-info__item"> <img class="explanation-info__icon" src="img/icon-good.svg" alt="icon"/><span class="explanation-info__text">Столбики можно менять местами и добавлять свои</span></li>
+          </ul>
+        </div>
+        <button class="explanation-table__button">Ok</button>
+      </div>
+    </div>
+    <div class="popup" id="activate-table">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Активировать таблицу</div>
+        <div class="content">
+          <p>Таблица будет активирована прямо сейчас на <b style="color:#00AAFF">30 дней</b></p><br/>
+          <p>Количество объявлений - 100 за 200 монет!</p><br/><b class="content__title">Важно!</b><br/><br/>
+          <p>Если хотите сделать лимит больше или меньше, закройте это окно и измените количество объявлений!</p>
+        </div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Активировать</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="save-change">
+      <div class="popup__body popup__body--470">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Сохранить изменения?</div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Сохранить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="delete-table">
+      <div class="popup__body popup__body--470">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Удалить таблицу?</div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--delete">Да, удалить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="create-analytics">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Создать аналитику</div>
+        <div class="position position--mobnp"> 
+          <div class="position-data position-data--modal">
+            <div class="position-data__fields">
+              <div class="edit-field">
+                <div class="edit-field__pos">
+                  <div class="edit-field__box">
+                    <input class="edit-field__input" type="text" placeholder="Введите название"/>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="edit-field__pos">
+                  <div class="edit-field__box">
+                    <input class="edit-field__input" type="text" placeholder="Введите название категории"/>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="edit-field__pos">
+                  <div class="edit-field__box">
+                    <input class="edit-field__input" type="text" placeholder="Введите город"/>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-field">
+                <div class="edit-field__pos">
+                  <div class="edit-field__box">
+                    <input class="edit-field__input" type="text" placeholder="Введите количество объявлений"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tooltip tooltip--popup">
+              <svg class="tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9 5H11V7H9V5ZM9 9H11V15H9V9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#00AAFF"></path>
+              </svg>
+              <p class="tooltip__text">Количество объявлений не может быть <b style="color:#00AAFF">меньше 0</b> и <b style="color:#00AAFF">больше 100</b> !</p>
+            </div>
+            <div class="position-data__fields"> 
+              <div class="edit-field">
+                <div class="mobile"> <span class="edit-field__name">URL страницы</span></div>
+                <div class="edit-field__box">
+                  <div class="desktop"><span class="edit-field__name">URL страницы</span></div>
+                  <input class="edit-field__input edit-field__input--underline" type="text" value="https://www.avito.ru/kazan/dlya_biznesa"/>
+                </div>
+                <div class="desktop">
+                  <button class="edit-btn edit-btn--record">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M0 15.8339V20H4.16609L16.4533 7.71282L12.2872 3.54673L0 15.8339ZM19.675 4.49104C20.1083 4.05777 20.1083 3.35787 19.675 2.92459L17.0754 0.324955C16.6421 -0.108318 15.9422 -0.108318 15.509 0.324955L13.4759 2.35801L17.642 6.52409L19.675 4.49104Z" fill="#FFF"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="create-info"> <a class="create-info__btn" data-popup="popup" href="#explanation-url">Как получить ссылку? </a></div>
+          </div>
+        </div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Начать</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup explanation-table" id="explanation-url">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title explanation-table__title">Откуда взять url страницы?</div>
+        <ul class="explanation-list"> 
+          <li class="explanation-list__item"><span class="explanation-list__num">1</span><span class="explanation-list__text">Перейдите на сайт <a href="#" target="_blank">Avito.ru</a></span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">2</span><span class="explanation-list__text">Выберите город ( <a href="#" target="_blank">вот так</a> )</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">3</span><span class="explanation-list__text">Выберите необходимую категорию <br> Например: Транспорт  ›  Audi  ›  Q7 ( <a href="#" target="_blank">вот так </a>)</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">4</span><span class="explanation-list__text">Копируем ссылку с адресной строки ( <a href="#" target="_blank">вот так </a>)</span></li>
+          <li class="explanation-list__item"><span class="explanation-list__num">5</span><span class="explanation-list__text">Скопированную ссылку, вставляем в поле <b style="color:#00AAFF">URL страницы</b> ( <a href="#" target="_blank">вот так </a>)</span></li>
+        </ul>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Начать</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup explanation-table" id="successful">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Успешно!</div>
+        <div class="content"> 
+          <p>Мы начали собирать данные!</p><br/>
+          <p>После завершения сбора аналитики мы вышлем на <a href="#" target="_blank">Вашу эл. почту письмо</a> о завершении загрузки.</p><br/>
+          <p>Также вы можете сами в любой момент <a href="#" target="_blank">завершить сбор аналитики.</a></p>
+        </div>
+        <button class="explanation-table__button">Ok</button>
+      </div>
+    </div>
+    <div class="popup replenish-account" id="replenish-account">
+      <div class="popup__body popup__body--470">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Сохранить изменения?</div>
+        <div class="replenish-account__field"> 
+          <p class="replenish-account__title">Сумма</p>
+          <input class="replenish-account__input" type="text" placeholder="Введите сумму"/>
+        </div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Пополнить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="invite">
+      <div class="popup__body popup__body--720">
+        <button class="popup__close js-popupClose"> 
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18.9929 3.02143C19.5491 2.4652 19.5491 1.56337 18.9929 1.00714C18.4366 0.450913 17.5348 0.450913 16.9786 1.00714L10 7.98571L3.02143 1.00714C2.4652 0.450912 1.56337 0.450913 1.00714 1.00714C0.450913 1.56337 0.450913 2.4652 1.00714 3.02143L7.98571 10L1.00714 16.9786C0.450912 17.5348 0.450913 18.4366 1.00714 18.9929C1.56337 19.5491 2.4652 19.5491 3.02143 18.9929L10 12.0143L16.9786 18.9929C17.5348 19.5491 18.4366 19.5491 18.9929 18.9929C19.5491 18.4366 19.5491 17.5348 18.9929 16.9786L12.0143 10L18.9929 3.02143Z" fill="black"></path>
+          </svg>
+        </button>
+        <div class="popup__title">Создать приглашение?</div>
+        <div class="content"> <b>Система вознаграждений:</b><br/><br/>
+          <ul> 
+            <li><b style="color:#00AAFF">До 5</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">0%</b></li>
+            <li><b style="color:#00AAFF">5 - 9</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">5%</b></li>
+            <li><b style="color:#00AAFF">10 - 19</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">10%</b></li>
+            <li><b style="color:#00AAFF">20 - 29</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">20%</b></li>
+            <li><b style="color:#00AAFF">от 30</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">30%</b></li>
+          </ul><br/><a href="#">Подробнее условия партнерской программы</a><br/><br/>
+        </div>
+        <div class="popup-actions">
+          <button class="js-popupClose popup-actions__btn popup-actions__btn--cancel">Отменить</button>
+          <button class="popup-actions__btn popup-actions__btn--ok">Создать</button>
         </div>
       </div>
     </div>

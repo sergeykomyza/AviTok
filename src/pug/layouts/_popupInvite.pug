@@ -1,0 +1,26 @@
+.popup#invite
+	.popup__body.popup__body--720
+		include ./../layouts/_closePopup.pug
+		
+		.popup__title Создать приглашение?
+
+		.content 
+			b Система вознаграждений:
+
+			br
+			br
+
+			ul 
+				each item in ['<b style="color:#00AAFF">До 5</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">0%</b>','<b style="color:#00AAFF">5 - 9</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">5%</b>','<b style="color:#00AAFF">10 - 19</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">10%</b>','<b style="color:#00AAFF">20 - 29</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">20%</b>','<b style="color:#00AAFF">от 30</b> активных рефералов и своих тарифов - <b style="color:#00AAFF">30%</b>']
+					li !{item}
+
+			br
+
+			a(href="#") Подробнее условия партнерской программы
+
+			br
+			br
+
+		.popup-actions
+			button.js-popupClose.popup-actions__btn.popup-actions__btn--cancel Отменить
+			button.popup-actions__btn.popup-actions__btn--ok Создать

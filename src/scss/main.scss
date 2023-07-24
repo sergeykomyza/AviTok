@@ -150,6 +150,14 @@ textarea {
 		font-weight: 600;
 		color: var(--blue);
 		text-decoration: underline;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+	&__warning{
+		font-weight: 700;
+		color: var(--blue);
 	}
 
 	&__title{
@@ -781,4 +789,9 @@ textarea {
 	}
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МОДАЛЬНЫЕ ОКНА
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ РЕГИСТРАЦИЯ, ВХОД
+.enter{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
