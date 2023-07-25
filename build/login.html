@@ -29,9 +29,84 @@
         </div>
       </div>
     </header>
-    <main class="main">
-      <div class="enter"> <img class="enter__logo enter__logo--left" src="img/logo-half-1.png" alt="@"/>
-        <div class="enter__form"> </div><img class="enter__logo enter__logo--right" src="img/logo-half-2.png" alt="@"/>
+    <main class="main auth-page">
+      <div class="auth"> 
+        <div class="container">
+          <div class="auth__wrap"><img class="auth__logo auth__logo--left" src="img/logo-half-1.png" alt="@"/>
+            <div class="auth__box">
+              <div class="auth__headline">
+                <button class="auth__headbtn auth__headbtn--enter js-authToggleBtn" data-name="enter">вход</button><span class="auth__headdiv">/</span>
+                <button class="auth__headbtn auth__headbtn--registr js-authToggleBtn" data-name="registration">регистрация</button>
+              </div>
+              <div class="auth__body js-authToggleContent" id="enter">
+                <form class="auth-form" action="#">
+                  <div class="auth-form__field">
+                    <label class="auth-form__label" for="email">Эл. почта</label>
+                    <input class="auth-form__input" id="email" type="text" placeholder="Введите email"/>
+                  </div>
+                  <div class="auth-form__field error-field">
+                    <label class="auth-form__label" for="password">Введите пароль</label>
+                    <div class="auth-form__password js-passwordInputBox">
+                      <input class="auth-form__input auth-form__input--pass js-passwordInput" id="password" type="password" placeholder="Введите пароль"/>
+                      <button class="auth-form__eye js-passwordBtn">
+                        <svg class="auth-form__eyevis" width="19" height="13" viewBox="0 0 19 13" fill="none">
+                          <path d="M9.5 0C5.18182 0 1.49409 2.69533 0 6.5C1.49409 10.3047 5.18182 13 9.5 13C13.8182 13 17.5059 10.3047 19 6.5C17.5059 2.69533 13.8182 0 9.5 0ZM9.5 10.8333C7.11636 10.8333 5.18182 8.892 5.18182 6.5C5.18182 4.108 7.11636 2.16667 9.5 2.16667C11.8836 2.16667 13.8182 4.108 13.8182 6.5C13.8182 8.892 11.8836 10.8333 9.5 10.8333ZM9.5 3.9C8.06636 3.9 6.90909 5.06133 6.90909 6.5C6.90909 7.93867 8.06636 9.1 9.5 9.1C10.9336 9.1 12.0909 7.93867 12.0909 6.5C12.0909 5.06133 10.9336 3.9 9.5 3.9Z" fill="#C8C8C8"></path>
+                        </svg>
+                        <svg class="auth-form__eyehid" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                          <path d="M9.50432 3.57895C11.889 3.57895 13.8245 5.58316 13.8245 8.05263C13.8245 8.63421 13.7121 9.18 13.5134 9.69L16.0364 12.3026C17.3411 11.1753 18.3693 9.71684 19 8.05263C17.5052 4.12474 13.8158 1.34211 9.49568 1.34211C8.28604 1.34211 7.12824 1.56579 6.05684 1.96842L7.92315 3.90105C8.41564 3.69526 8.9427 3.57895 9.50432 3.57895ZM0.864029 1.13632L2.83402 3.17632L3.23147 3.58789C1.79718 4.74211 0.673943 6.28105 0 8.05263C1.49477 11.9805 5.18417 14.7632 9.50432 14.7632C10.8436 14.7632 12.1223 14.4947 13.2888 14.0116L13.6517 14.3874L16.1833 17L17.2806 15.8637L1.96135 0L0.864029 1.13632ZM5.64211 6.08421L6.98136 7.47105C6.93815 7.65895 6.91223 7.85579 6.91223 8.05263C6.91223 9.53789 8.07003 10.7368 9.50432 10.7368C9.69441 10.7368 9.88449 10.71 10.0659 10.6653L11.4052 12.0521C10.8263 12.3474 10.1869 12.5263 9.50432 12.5263C7.1196 12.5263 5.18417 10.5221 5.18417 8.05263C5.18417 7.34579 5.35698 6.68368 5.64211 6.08421ZM9.36608 5.38632L12.0878 8.20474L12.105 8.06158C12.105 6.57632 10.9472 5.37737 9.51296 5.37737L9.36608 5.38632Z" fill="black"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="auth-form__action"> 
+                    <button class="auth-form__forgot">Забыли пароль?</button>
+                    <button class="auth-form__enterbtn">Войти</button>
+                  </div>
+                </form>
+              </div>
+              <div class="auth__body js-authToggleContent" id="registration">
+                <form class="auth-form" action="#">
+                  <div class="auth-form__field"> 
+                    <label class="auth-form__label" for="email2">Эл. почта </label>
+                    <input class="auth-form__input" id="email2" type="text" placeholder="Введите email"/>
+                  </div>
+                  <div class="auth-form__field"> 
+                    <label class="auth-form__label" for="password2">Придумайте пароль</label>
+                    <div class="auth-form__password js-passwordInputBox">
+                      <input class="auth-form__input auth-form__input--pass js-passwordInput" id="password2" type="password" placeholder="Введите пароль"/>
+                      <button class="auth-form__eye js-passwordBtn">
+                        <svg class="auth-form__eyevis" width="19" height="13" viewBox="0 0 19 13" fill="none">
+                          <path d="M9.5 0C5.18182 0 1.49409 2.69533 0 6.5C1.49409 10.3047 5.18182 13 9.5 13C13.8182 13 17.5059 10.3047 19 6.5C17.5059 2.69533 13.8182 0 9.5 0ZM9.5 10.8333C7.11636 10.8333 5.18182 8.892 5.18182 6.5C5.18182 4.108 7.11636 2.16667 9.5 2.16667C11.8836 2.16667 13.8182 4.108 13.8182 6.5C13.8182 8.892 11.8836 10.8333 9.5 10.8333ZM9.5 3.9C8.06636 3.9 6.90909 5.06133 6.90909 6.5C6.90909 7.93867 8.06636 9.1 9.5 9.1C10.9336 9.1 12.0909 7.93867 12.0909 6.5C12.0909 5.06133 10.9336 3.9 9.5 3.9Z" fill="#C8C8C8"></path>
+                        </svg>
+                        <svg class="auth-form__eyehid" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                          <path d="M9.50432 3.57895C11.889 3.57895 13.8245 5.58316 13.8245 8.05263C13.8245 8.63421 13.7121 9.18 13.5134 9.69L16.0364 12.3026C17.3411 11.1753 18.3693 9.71684 19 8.05263C17.5052 4.12474 13.8158 1.34211 9.49568 1.34211C8.28604 1.34211 7.12824 1.56579 6.05684 1.96842L7.92315 3.90105C8.41564 3.69526 8.9427 3.57895 9.50432 3.57895ZM0.864029 1.13632L2.83402 3.17632L3.23147 3.58789C1.79718 4.74211 0.673943 6.28105 0 8.05263C1.49477 11.9805 5.18417 14.7632 9.50432 14.7632C10.8436 14.7632 12.1223 14.4947 13.2888 14.0116L13.6517 14.3874L16.1833 17L17.2806 15.8637L1.96135 0L0.864029 1.13632ZM5.64211 6.08421L6.98136 7.47105C6.93815 7.65895 6.91223 7.85579 6.91223 8.05263C6.91223 9.53789 8.07003 10.7368 9.50432 10.7368C9.69441 10.7368 9.88449 10.71 10.0659 10.6653L11.4052 12.0521C10.8263 12.3474 10.1869 12.5263 9.50432 12.5263C7.1196 12.5263 5.18417 10.5221 5.18417 8.05263C5.18417 7.34579 5.35698 6.68368 5.64211 6.08421ZM9.36608 5.38632L12.0878 8.20474L12.105 8.06158C12.105 6.57632 10.9472 5.37737 9.51296 5.37737L9.36608 5.38632Z" fill="black"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="auth-form__field"> 
+                    <label class="auth-form__label" for="password3">Повторите пароль</label>
+                    <div class="auth-form__password js-passwordInputBox">
+                      <input class="auth-form__input auth-form__input--pass js-passwordInput" id="password3" type="password" placeholder="Введите пароль"/>
+                      <button class="auth-form__eye js-passwordBtn">
+                        <svg class="auth-form__eyevis" width="19" height="13" viewBox="0 0 19 13" fill="none">
+                          <path d="M9.5 0C5.18182 0 1.49409 2.69533 0 6.5C1.49409 10.3047 5.18182 13 9.5 13C13.8182 13 17.5059 10.3047 19 6.5C17.5059 2.69533 13.8182 0 9.5 0ZM9.5 10.8333C7.11636 10.8333 5.18182 8.892 5.18182 6.5C5.18182 4.108 7.11636 2.16667 9.5 2.16667C11.8836 2.16667 13.8182 4.108 13.8182 6.5C13.8182 8.892 11.8836 10.8333 9.5 10.8333ZM9.5 3.9C8.06636 3.9 6.90909 5.06133 6.90909 6.5C6.90909 7.93867 8.06636 9.1 9.5 9.1C10.9336 9.1 12.0909 7.93867 12.0909 6.5C12.0909 5.06133 10.9336 3.9 9.5 3.9Z" fill="#C8C8C8"></path>
+                        </svg>
+                        <svg class="auth-form__eyehid" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                          <path d="M9.50432 3.57895C11.889 3.57895 13.8245 5.58316 13.8245 8.05263C13.8245 8.63421 13.7121 9.18 13.5134 9.69L16.0364 12.3026C17.3411 11.1753 18.3693 9.71684 19 8.05263C17.5052 4.12474 13.8158 1.34211 9.49568 1.34211C8.28604 1.34211 7.12824 1.56579 6.05684 1.96842L7.92315 3.90105C8.41564 3.69526 8.9427 3.57895 9.50432 3.57895ZM0.864029 1.13632L2.83402 3.17632L3.23147 3.58789C1.79718 4.74211 0.673943 6.28105 0 8.05263C1.49477 11.9805 5.18417 14.7632 9.50432 14.7632C10.8436 14.7632 12.1223 14.4947 13.2888 14.0116L13.6517 14.3874L16.1833 17L17.2806 15.8637L1.96135 0L0.864029 1.13632ZM5.64211 6.08421L6.98136 7.47105C6.93815 7.65895 6.91223 7.85579 6.91223 8.05263C6.91223 9.53789 8.07003 10.7368 9.50432 10.7368C9.69441 10.7368 9.88449 10.71 10.0659 10.6653L11.4052 12.0521C10.8263 12.3474 10.1869 12.5263 9.50432 12.5263C7.1196 12.5263 5.18417 10.5221 5.18417 8.05263C5.18417 7.34579 5.35698 6.68368 5.64211 6.08421ZM9.36608 5.38632L12.0878 8.20474L12.105 8.06158C12.105 6.57632 10.9472 5.37737 9.51296 5.37737L9.36608 5.38632Z" fill="black"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="auth-form__action"> 
+                    <button class="auth-form__forgot">Забыли пароль?</button>
+                    <button class="auth-form__enterbtn">Войти</button>
+                  </div>
+                </form>
+              </div>
+            </div><img class="auth__logo auth__logo--right" src="img/logo-half-2.png" alt="@"/>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="footer">

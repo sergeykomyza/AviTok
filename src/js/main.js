@@ -1,26 +1,3 @@
-// ================================================== исключение по наименованию страницы
-// const contactsPage = window.location.pathname == '/contacts.html'
-// if(contactsPage){
-//     ...
-// }
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ПРОКРУТКА, ШАПКА
-// document.addEventListener('DOMContentLoaded', function () {
-//     // СКРОЛЛ К НУЖНОЙ СЕКЦИИ ПО КЛИКУ НА ПУНКТАХ МЕНЮ
-//     $('.menu__link').click(function () {
-//         var scroll_elem = $(this).attr('href');
-//         $('html, body').animate({
-//             scrollTop: $(scroll_elem).offset().top
-//         }, 1000);
-//     });
-//     // ДОБАВЛЯЕМ АКТИВНЫЙ КЛАСС ШАПКЕ
-//     function headerActiveToggle() {
-//         const scrollSize = window.pageYOffset
-//         scrollSize > 1 ? header.classList.add('active') : header.classList.remove('active')
-//     }
-//     window.addEventListener('load', headerActiveToggle) // ПРИ ПЕРЕЗАГРУЗКЕ СТРАНИЦЫ ЕСЛИ СТРАНИЦА УЖЕ ПРОСКРОЛЛЕНА
-//     window.addEventListener('scroll', headerActiveToggle) // ПРИ СКРОЛЛЕ
-// });
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МАСКА ДЛЯ ИНПУТОВ (https://github.com/RobinHerbots/Inputmask)
 const inputMask = () => {
@@ -75,7 +52,7 @@ const sliders = () => {
 	});
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ВЫПАДАЮЩИЙ СПИСОК
 function customSelect(parent, header, item, current, value, activeClass) {
 	document.querySelectorAll(parent).forEach((select) => {
 		let selectHeader = select.querySelectorAll(header),
@@ -110,7 +87,7 @@ function customSelect(parent, header, item, current, value, activeClass) {
 	});
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МОБИЛЬНОЕ МЕНЮ
 
 const mMenu = () => {
 	const gamburger = document.querySelector(".gamburger")
@@ -122,6 +99,7 @@ const mMenu = () => {
 		this.classList.toggle("is-open")
 		if(this.classList.contains('is-open')){
 			mMenu.style.height = 'calc(100vh - 60px)'
+			mMenu.querySelector('.m-menu__inner').style.maxHeight = mMenu.scrollHeight + 'px'
 		} else {
 			mMenu.style.height = 0
 		}
@@ -129,7 +107,7 @@ const mMenu = () => {
 
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ВЫПАДАЮЩИЙ СПИСОК В ШАПКЕ
 const lkMenuToggle = () => {
 	const btn = document.querySelector('.js-lkMenuToggle')
 	const lkMenu = document.querySelector('.header-lk__menu')
@@ -149,7 +127,7 @@ const lkMenuToggle = () => {
 	})
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ПРОКРУТКА ВВЕРХ В ТАБЛИЦЕ
 const topToTableHead = () => {
 	const btn = document.querySelector('.js-topToTableHead')
 	const table = document.querySelector('.table__scroll')
@@ -160,7 +138,7 @@ const topToTableHead = () => {
 	})
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАЛЕНДАРЬ 
 const dataPicker = () => {
 	$.datepicker.regional['ru'] = {
 		closeText: 'Закрыть',
@@ -240,6 +218,47 @@ const popup = ()=> {
     })
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ФОРМА АВТОРИЗАЦИИ
+const auth = ()=> {
+	const btn = document.querySelectorAll('.js-authToggleBtn')
+	const content = document.querySelectorAll('.js-authToggleContent')
+
+	btn[0].classList.add('is-active')
+	content.forEach(c => {
+		c.style.display = 'none'
+	})
+	content[0].style.display = 'block'
+
+	btn.forEach(item => {
+		item.addEventListener('click', (e)=> {
+			btn.forEach(elem => {
+				elem.classList.remove('is-active')
+			})
+			e.target.classList.add('is-active')
+
+			content.forEach(c => {
+				c.style.display = 'none'
+			})
+			document.querySelector(`#${item.dataset.name}`).style.display = 'block'
+		})
+	})
+
+	// ~~~~~~~~~~~~~~~~ password
+	const passwordsBox = document.querySelectorAll('.js-passwordInputBox')
+	passwordsBox.forEach(item => {
+		const btn = item.querySelector('.js-passwordBtn')
+		const input = item.querySelector('.js-passwordInput')
+		btn.addEventListener('click', ()=> {
+			item.classList.toggle('is-visible')
+			if(item.classList.contains('is-visible')){
+				input.setAttribute('type', 'text')
+			} else {
+				input.setAttribute('type', 'password')
+			}
+		})
+	})
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
 const map = () => {
 	setTimeout(function () {
@@ -301,11 +320,16 @@ inputMask()
 customSelect('.select', '.select__header', '.select__item', '.select__current', '.select__value', 'is-active')
 customSelect('.table-select', '.table-select__header', '.table-select__item', '.table-select__current', '.table-select__value', 'is-active')
 mMenu()
-lkMenuToggle()
+if(document.querySelector('.header-lk')){
+	lkMenuToggle()
+}
 if(document.querySelector('.js-topToTableHead')){
 	topToTableHead()
 }
 dataPicker()
 popup()
+if(document.querySelector('.auth')){
+	auth()
+}
 
 

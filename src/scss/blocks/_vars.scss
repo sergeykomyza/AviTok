@@ -12,7 +12,7 @@
 	--orange: #FF9C00;
 } 
 
-// MIXINS
+// MIXINS @include button(auto, 40px, var(--blue), var(--hoverBlue));
 @mixin button($width, $height, $bg, $hoverBg){
 	position: relative;
 	display: flex;
